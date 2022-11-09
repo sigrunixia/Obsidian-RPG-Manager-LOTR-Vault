@@ -7,8 +7,8 @@ data:
   synopsis: "Character Creation of the Halflings"
   complete: false
   sessionId: 0
-  action: 
-  trigger: "Start the Game"
+  action: "Character Creation and Explain the Basic Rules, as well as the setting of Lord of the Rings and the Halflings."
+  trigger: "Start the Game and begin Character Creation"
   date: 
   sceneType: "exposition"
   isActedUpon: false

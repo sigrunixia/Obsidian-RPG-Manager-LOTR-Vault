@@ -3,15 +3,15 @@ alias: [Frodo Baggins]
 ---
 ```RpgManagerData
 data: 
-  synopsis: "The nephew of Bilbo Baggins and the host of #Seed."
+  synopsis: "The nephew of Bilbo Baggins."
   complete: false
   dob: "2985-09-22"
   death: 
   goals: "Enjoy the journey of this magical campaign these weird eldritch gods have set us on."
   pronoun: "he"
   images: 
-    - path: "Lord of the Rings/Images/Characters/Frodo.jpg"
-      caption: "I may be a #Seed, but I bounce back the fastest."
+    - path: "Lord of the Rings/1_Images/Characters/Frodo.jpg"
+      caption: "I may be a Baggins, but I am my Uncle's Nephew."
 relationships: 
   - type: "bidirectional"
     path: "Lord of the Rings/Factions/Halfling Families/Baggins Family.md"

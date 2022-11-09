@@ -11,8 +11,8 @@ data:
   goals: "Grow the biggest Potato in the history of The Shire.\n\nMeet a Tree-Man.\n\nMarry Rosie.\n\nKeep Mr. Frodo out of trouble.\n\nNot necessarily in that order."
   pronoun: "he"
   images: 
-    - path: "Lord of the Rings/Images/Characters/Samwise.jpg"
-      caption: "I'm a gardener of the #Tree, a great cook, and I have a frying pan and not afraid to use it!"
+    - path: "Lord of the Rings/1_Images/Characters/Samwise.jpg"
+      caption: "I'm a gardener, a great cook, and I have a frying pan and not afraid to use it!"
 relationships: []
 ```
 

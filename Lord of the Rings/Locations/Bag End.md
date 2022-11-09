@@ -7,7 +7,7 @@ data:
   complete: true
   address: "1369 Bags End Sh-093ux"
   images: 
-    - path: "Lord of the Rings/Images/Locations/Bag_End.jpg"
+    - path: "Lord of the Rings/1_Images/Locations/Bag_End.jpg"
       caption: "The not so humble abode of Bilbo and Frodo Baggins."
 ```
 ```RpgManager
@@ -27,7 +27,7 @@ models:
 ---
 ### Location Details
  - [**Samwise Gamgee**](../Characters/Samwise%20Gamgee.md) became a gardener for Bag End after his father, Hamfast, passed the title and responsibilities onto him. 
- - Bag End was created by [**Bilbo Baggins**](Bilbo%20Baggins.md)'s Father, Bungo. 
+ - Bag End was created by [**Bilbo Baggins**](../NonPlayerCharacters/Halflings/Bilbo%20Baggins.md)'s Father, Bungo. 
 
 ---
 ```RpgManagerID

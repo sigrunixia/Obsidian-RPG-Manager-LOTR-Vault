@@ -12,7 +12,7 @@ data:
   pronoun: "he"
   complete: false
   images: 
-    - path: "Lord of the Rings/Images/Non Player Characters/Halflings/Bilbo.jpg"
+    - path: "Lord of the Rings/1_Images/Non Player Characters/Halflings/Bilbo.jpg"
       caption: "I feel the call for one more adventure."
 relationships: 
   - type: "bidirectional"

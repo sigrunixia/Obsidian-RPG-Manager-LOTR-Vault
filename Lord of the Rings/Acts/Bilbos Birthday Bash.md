@@ -22,7 +22,7 @@ data:
   complete: false
   abtStage: 
   images: 
-    - path: "Lord of the Rings/Images/Acts/Birthday_Bash.jpg"
+    - path: "Lord of the Rings/1_Images/Acts/Birthday_Bash.jpg"
       caption: ""
 relationships: 
   - type: "unidirectional"

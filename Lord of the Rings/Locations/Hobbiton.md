@@ -7,7 +7,7 @@ data:
   complete: false
   address: "1000 Westernia sh-382x"
   images: 
-    - path: "Lord of the Rings/Images/Locations/Hobbiton.jpg"
+    - path: "Lord of the Rings/1_Images/Locations/Hobbiton.jpg"
       caption: "The mayor has recently had to increase the fine for abandoned boats in the Shire-Water, due to the increase in BWIAH Interventions: Boating While Intoxicated and Hangry. "
 relationships: 
   - type: "child"

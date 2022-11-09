@@ -8,7 +8,7 @@ data:
   synopsis: "Legends once told of the fabled shadow-warriors of Sauron, but they long faded into obscurity and myth. Terrifying power, with breath that stole warmth and life from all nearby. They were a force to be reckoned with, and Middle Earth should be so glad that they fell after the defeat of the Dark One."
   complete: false
   images: 
-    - path: "Lord of the Rings/Images/Factions/The_Black_Riders.jpeg"
+    - path: "Lord of the Rings/1_Images/Factions/The_Black_Riders.jpeg"
       caption: ""
 ```
 
