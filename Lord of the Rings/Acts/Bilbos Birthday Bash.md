@@ -21,6 +21,13 @@ data:
   synopsis: "It is not everyday that a Hobbit turns 111, and Bilbo is poised to make this a night that the folks of the Shire will never forget. Meanwhile, the wizard Gandalf brings not only Fireworks to this iteration of the Lord of the Rings, but the Floratsons. Seed, Tree, Herb, and Cactus Floratson, to be exact. "
   complete: false
   abtStage: 
+  images: 
+    - path: "Lord of the Rings/Images/Acts/Birthday_Bash.jpg"
+      caption: ""
+relationships: 
+  - type: "unidirectional"
+    path: "Lord of the Rings/Locations/Bag End.md"
+    description: 
 ```
 
 ```RpgManager
@@ -32,7 +39,7 @@ models:
 
 ### Act Notes
 
--
+- This act is expected to take you through Bilbo's exposition to his departure from Bag End. 
 
 ---
 

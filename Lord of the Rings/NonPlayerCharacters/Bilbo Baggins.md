@@ -12,11 +12,17 @@ data:
   pronoun: "he"
   complete: false
   images: 
-    - path: "Lord of the Rings/Images/Non_Player_Characters/Halflings/Bilbo.jpg"
+    - path: "Lord of the Rings/Images/Non Player Characters/Halflings/Bilbo.jpg"
       caption: "I feel the call for one more adventure."
 relationships: 
   - type: "bidirectional"
-    path: "Lord of the Rings/Factions/Baggins Family.md"
+    path: "Lord of the Rings/Factions/Halfling Families/Baggins Family.md"
+    description: 
+  - type: "unidirectional"
+    path: "Lord of the Rings/Locations/Bag End.md"
+    description: 
+  - type: unidirectional
+    path: Lord of the Rings/Locations/Bag End.md
     description: 
 ```
 

@@ -14,7 +14,7 @@ data:
       caption: "I may be a #Seed, but I bounce back the fastest."
 relationships: 
   - type: "bidirectional"
-    path: "Lord of the Rings/Factions/Baggins Family.md"
+    path: "Lord of the Rings/Factions/Halfling Families/Baggins Family.md"
     description: 
 ```
 ```RpgManager
