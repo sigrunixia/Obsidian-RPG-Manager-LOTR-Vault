@@ -1,0 +1,40 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore trash Files
+.trash
+
+# Obsidian - All but RPG-Manager
+
+.obsidian/apps.json
+.obsidian/appearance.json
+.obsidian/core-plugins.json
+.obsidian/hotkeys.json
+.obsidian/workspace.json
+.obsidian/snippets
+.obsidian/themes
+
+# Activity Data
+sync.log
+some.log
+dlFolderLastChange
+
+# redundant
+.config/karabiner/automatic_backups
+
+# default location of (large) coc extensions; actually not necessary because of `g.coc_data_home` is changed in the coc-config, but still put here as a safety net
+.config/coc
+
+# in case of accidental saving of such files in the repo
+*.mp4
+*.part
+
+# safety net in case sensitive data is accidentally moved
+pw.*
+*.kdb
+*.kdbx
+*.pix
+*.key
+
+# Ignore VSCode Files
+.vscode
