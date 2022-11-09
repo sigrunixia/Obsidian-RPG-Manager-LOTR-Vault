@@ -6,6 +6,9 @@ tags: []
 data: 
   synopsis: "The Wizards in the Order of Wizards are long have thought to been of Elven kind, for they have lived many ages. Legend has there are many, but only five are known."
   complete: false
+  images: 
+    - path: "Lord of the Rings/1_Images/Factions/order_of_wizards.jpg"
+      caption: "The five appeared perpetually old, and yet they never aged. "
 ```
 ```RpgManager
 models: 
