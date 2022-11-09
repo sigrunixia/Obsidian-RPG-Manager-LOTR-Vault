@@ -1,0 +1,315 @@
+{
+  "automaticMove": true,
+  "templateFolder": "",
+  "imagesFolder": "Zadens_Photo_Album",
+  "YouTubeKey": "",
+  "previousVersion": "3.1",
+  "usePlotStructures": false,
+  "useSceneAnalyser": false,
+  "advanced": {
+    "Agnostic": {
+      "ActList": {
+        "title": "Acts",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 0,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "AdventureList": {
+        "title": "Adventures",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 0,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "CharacterList": {
+        "title": "Player Characters",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 1,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 3,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "ClueList": {
+        "title": "Clues",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 1,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 5,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "EventList": {
+        "title": "Events",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 1,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 6,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "FactionList": {
+        "title": "Factions",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 1,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "LocationList": {
+        "title": "Locations",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 1,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "MusicList": {
+        "title": "Musics",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 1,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 7,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "NonPlayerCharacterList": {
+        "title": "Non Player Characters",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 1,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 3,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "SceneList": {
+        "title": "Scenes",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 0,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 8,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 6,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 11,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 12,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 13,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "SessionList": {
+        "title": "Sessions",
+        "defaultVisible": true,
+        "fields": [
+          {
+            "field": 0,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 6,
+            "checked": true,
+            "required": false
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      },
+      "SubplotList": {
+        "title": "Subplots",
+        "defaultVisible": false,
+        "fields": [
+          {
+            "field": 2,
+            "checked": true,
+            "required": true
+          },
+          {
+            "field": 4,
+            "checked": true,
+            "required": false
+          }
+        ]
+      }
+    }
+  }
+}
