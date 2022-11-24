@@ -21,6 +21,9 @@ plot:
 data: 
   synopsis: "Merry and Pippin have stolen Gandalf's most dangerous firework: Memories of Smaug. Find them before they end up ruining Bilbo and Frodo's birthday party. "
   complete: false
+  images: 
+    - path: "Z_images/Subplot/Missing_Fireworks.jpg"
+      caption: ""
 ```
 ```RpgManager
 models: 

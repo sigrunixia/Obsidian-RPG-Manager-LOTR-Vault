@@ -12,10 +12,7 @@ data:
   images: 
     - path: "Z_images/Locations/Hobbiton_Party.jpg"
       caption: ""
-relationships: 
-  - type: "bidirectional"
-    path: "The_Lord_of_the_Rings/Clues/Oddly-Matching-Footprints.md"
-    description: 
+relationships: []
 ```
 
 ```RpgManager

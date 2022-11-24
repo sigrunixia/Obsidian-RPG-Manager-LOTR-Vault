@@ -10,9 +10,7 @@ data:
   goals: "Seek the secrets of the creation of the Elven Rings\nObtain possession of the One Ring\nFind my missing socks"
   pronoun: "e"
   complete: false
-  images: 
-    - path: "Lord of the Rings/1_Images/Non Player Characters/Emanations/Saruman.jpg"
-      caption: "Deep in my knowledge I have seen the truth. The current way leads to death for everyone."
+  images: []
 relationships: 
   - type: "bidirectional"
     path: "Lord_of_the_Rings/Factions/Maiar/Order-of-Wizards.md"

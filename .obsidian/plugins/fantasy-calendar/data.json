@@ -1,0 +1,369 @@
+{
+  "addToDefaultIfMissing": true,
+  "calendars": [
+    {
+      "name": "Stewards-Reckoning",
+      "description": null,
+      "static": {
+        "firstWeekDay": 0,
+        "overflow": true,
+        "weekdays": [
+          {
+            "type": "day",
+            "name": "Orgilion",
+            "id": "ID_fb1bf9b8fa28"
+          },
+          {
+            "type": "day",
+            "name": "Oranor",
+            "id": "ID_4b6af8b91bf8"
+          },
+          {
+            "type": "day",
+            "name": "Orithil",
+            "id": "ID_f8eb0acb892a"
+          },
+          {
+            "type": "day",
+            "name": "Orgaladh",
+            "id": "ID_7a3bab0bbaa8"
+          },
+          {
+            "type": "day",
+            "name": "Ormenel",
+            "id": "ID_a80b9afb2919"
+          },
+          {
+            "type": "day",
+            "name": "Oraearon",
+            "id": "ID_7979e9aad96a"
+          },
+          {
+            "type": "day",
+            "name": "Orbelain",
+            "id": "ID_8899f9c87a48"
+          }
+        ],
+        "months": [
+          {
+            "name": "Yestarë",
+            "type": "month",
+            "length": 1,
+            "id": "ID_489b8a9bc868"
+          },
+          {
+            "name": "Narwain",
+            "type": "month",
+            "length": 30,
+            "id": "ID_ba3b3839d969"
+          },
+          {
+            "name": "Nínui ",
+            "type": "month",
+            "length": 30,
+            "id": "ID_7b38ebeac818"
+          },
+          {
+            "name": "Gwaeron",
+            "type": "month",
+            "length": 30,
+            "id": "ID_3838eb6a4a99"
+          },
+          {
+            "name": "Tuilérë",
+            "type": "month",
+            "length": 1,
+            "id": "ID_db1a680b4938"
+          },
+          {
+            "name": "Gwirith",
+            "type": "month",
+            "length": 30,
+            "id": "ID_8a08abb93a7b"
+          },
+          {
+            "name": "Lothron",
+            "type": "month",
+            "length": 30,
+            "id": "ID_792ad9290998"
+          },
+          {
+            "name": "Nórui",
+            "type": "month",
+            "length": 30,
+            "id": "ID_dadb8a29698a"
+          },
+          {
+            "name": "Cerveth",
+            "type": "month",
+            "length": 30,
+            "id": "ID_29aa69fa5a08"
+          },
+          {
+            "name": "Urui",
+            "type": "month",
+            "length": 30,
+            "id": "ID_e81a3a9808a9"
+          },
+          {
+            "name": "Ivanneth",
+            "type": "month",
+            "length": 30,
+            "id": "ID_aa0a7a5be96b"
+          },
+          {
+            "name": "Yáviérë",
+            "type": "month",
+            "length": 1,
+            "id": "ID_891b7b38fb09"
+          },
+          {
+            "name": "Narbeleth",
+            "type": "month",
+            "length": 30,
+            "id": "ID_b8d9c9eae8db"
+          },
+          {
+            "name": "Hithui",
+            "type": "month",
+            "length": 30,
+            "id": "ID_3a587a3a8a38"
+          },
+          {
+            "name": "Girithron",
+            "type": "month",
+            "length": 30,
+            "id": "ID_38f94aa9f819"
+          },
+          {
+            "name": " Mettarë",
+            "type": "month",
+            "length": 1,
+            "id": "ID_4b693bb85b5a"
+          }
+        ],
+        "moons": [
+          {
+            "name": "Ithil",
+            "cycle": 29.53,
+            "offset": 16,
+            "faceColor": "#ffffff",
+            "shadowColor": "#000000",
+            "id": "ID_2b596829299b"
+          }
+        ],
+        "leapDays": [
+          {
+            "name": "Loëndë",
+            "type": "leapday",
+            "interval": [
+              {
+                "ignore": false,
+                "exclusive": false,
+                "interval": 1
+              },
+              {
+                "ignore": false,
+                "exclusive": true,
+                "interval": 4
+              },
+              {
+                "ignore": false,
+                "exclusive": false,
+                "interval": 100
+              },
+              {
+                "ignore": false,
+                "exclusive": true,
+                "interval": 1000
+              }
+            ],
+            "timespan": 8,
+            "intercalary": true,
+            "numbered": true,
+            "after": 0,
+            "offset": 0,
+            "id": "ID_eab838780a8b"
+          },
+          {
+            "name": "Enderi 1",
+            "type": "leapday",
+            "interval": [
+              {
+                "ignore": false,
+                "exclusive": false,
+                "interval": 4
+              },
+              {
+                "ignore": false,
+                "exclusive": true,
+                "interval": 100
+              },
+              {
+                "ignore": false,
+                "exclusive": false,
+                "interval": 1000
+              }
+            ],
+            "timespan": 8,
+            "intercalary": true,
+            "numbered": true,
+            "after": 0,
+            "offset": 0,
+            "id": "ID_7bcb9bdab9f8"
+          },
+          {
+            "name": "Enderi 2",
+            "type": "leapday",
+            "interval": [
+              {
+                "ignore": false,
+                "exclusive": false,
+                "interval": 4
+              },
+              {
+                "ignore": false,
+                "exclusive": true,
+                "interval": 100
+              },
+              {
+                "ignore": false,
+                "exclusive": false,
+                "interval": 1000
+              }
+            ],
+            "timespan": 8,
+            "intercalary": true,
+            "numbered": true,
+            "after": 0,
+            "offset": 0,
+            "id": "ID_6a6899aabbca"
+          },
+          {
+            "name": "Enderi 3",
+            "type": "leapday",
+            "interval": [
+              {
+                "ignore": false,
+                "exclusive": false,
+                "interval": 1000
+              }
+            ],
+            "timespan": 8,
+            "intercalary": true,
+            "numbered": true,
+            "after": 0,
+            "offset": 0,
+            "id": "ID_09e9e95b0969"
+          }
+        ],
+        "eras": [],
+        "displayMoons": true,
+        "incrementDay": false,
+        "displayDayNumber": false
+      },
+      "current": {
+        "year": 3018,
+        "day": 20,
+        "month": 9
+      },
+      "events": [
+        {
+          "name": "Summer Solstice",
+          "description": "At the summer solstice, the Sun travels the longest path through the sky, and that day therefore has the most daylight.",
+          "id": "1453560",
+          "note": null,
+          "date": {
+            "day": 1,
+            "year": null,
+            "month": null
+          },
+          "category": null
+        },
+        {
+          "name": "Winter Solstice",
+          "description": "The winter solstice marks the shortest day and longest night of the year, when the sun is at its lowest arc in the sky.",
+          "id": "1453561",
+          "note": null,
+          "date": {
+            "day": null,
+            "year": null,
+            "month": 0
+          },
+          "category": null
+        },
+        {
+          "name": "Spring Equinox",
+          "description": "The spring equinox is when the day and the night are equally as long, and are getting longer.",
+          "id": "1453562",
+          "note": null,
+          "date": {
+            "day": null,
+            "year": null,
+            "month": 4
+          },
+          "category": null
+        },
+        {
+          "name": "Autumn Equinox",
+          "description": "The autumn equinox is when the day and the night are equally as long, and are getting shorter.",
+          "id": "1453563",
+          "note": null,
+          "date": {
+            "day": null,
+            "year": null,
+            "month": 11
+          },
+          "category": null
+        },
+        {
+          "auto": false,
+          "id": "ID_RPGM_1668545544082",
+          "name": "Birth of Frodo-Baggins",
+          "note": "The_Lord_of_the_Rings/Characters/Frodo-Baggins",
+          "category": "rpgm-rpg manager birth",
+          "description": "",
+          "date": {
+            "day": 1,
+            "month": 12,
+            "year": 2968
+          }
+        }
+      ],
+      "id": "ID_4ad9f82989b9",
+      "categories": [
+        {
+          "name": "RPG Manager Birth",
+          "id": "rpgm-rpg manager birth",
+          "color": "#00CC00"
+        }
+      ],
+      "timelineTag": "#timeline"
+    }
+  ],
+  "configDirectory": null,
+  "currentCalendar": null,
+  "dailyNotes": false,
+  "dateFormat": "YYYY-MM-DD",
+  "defaultCalendar": "ID_4ad9f82989b9",
+  "eventPreview": false,
+  "exit": {
+    "saving": false,
+    "event": false,
+    "calendar": false
+  },
+  "eventFrontmatter": false,
+  "parseDates": false,
+  "settingsToggleState": {
+    "calendars": true,
+    "events": false,
+    "advanced": true
+  },
+  "showIntercalary": false,
+  "version": {
+    "major": null,
+    "minor": null,
+    "patch": null
+  },
+  "debug": false
+}

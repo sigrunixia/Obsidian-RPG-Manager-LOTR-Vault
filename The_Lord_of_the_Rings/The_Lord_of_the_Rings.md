@@ -1,6 +1,7 @@
 ---
 aliases: ["The Lord of the Rings", "LOTR"]
 tags: ["Campaign", "TTRPG"]
+fc-calendar: Stewards-Reckoning
 ---
 ```RpgManagerData
 plot: 
@@ -32,7 +33,7 @@ models:
 ```
 ---
 ### Campaign Notes
- - 
+ - If using **[Obsidian Fantasy Calendar](https://github.com/fantasycalendar/obsidian-fantasy-calendar)**, refer to **[this page](https://github.com/psarando/shire-reckoning#tolkiens-calendars)** for conversion of Gregorian to Shire Calendar to Stewards' Reckoning Dates. 
 
 ---
 ```RpgManager

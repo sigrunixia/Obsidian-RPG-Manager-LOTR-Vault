@@ -9,7 +9,16 @@ data:
   synopsis: "A little tipsy, Bilbo mistakes a rogue dragon firework for a real dragon and proceeds to engage in a battle of words with it. The event becomes so memorable that ballads are written about it and far surpass the tales of Bilbo the Adventurer. "
   complete: false
   date: 
-relationships: []
+relationships: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/Clues/Oddly-Matching-Footprints.md"
+    description: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/Clues/Half-Smoked-Combustomille.md"
+    description: 
+  - type: "unidirectional"
+    path: "The_Lord_of_the_Rings/Locations/Hobbiton-Party-Site.md"
+    description: 
 ```
 
 ```RpgManager
@@ -32,7 +41,7 @@ models:
 
 ## Game Master Details
 
-- The fireworks lit by [Merry](../Characters/Meriadoc-Brandybuck.md) and [Pippin](../Characters/Peregrin-Took.md) are a special type of Firework. A more.. sentient type of magic, but very temperamental. It is comedic magic that Gandalf was working on and currently only knows how to trade insults, and then explode when it gets mad.
+- The fireworks lit by [Merry](../Characters/Meriadoc-Brandybuck.md) and [Pippin](../Characters/Peregrin-Took.md) are a special type of Firework. A more.. sentient type of magic, but very temperamental. It is comedic magic that Gandalf was working on and currently only knows how to trade insults, and then explode in starbursts when it loses.
 
 ---
 

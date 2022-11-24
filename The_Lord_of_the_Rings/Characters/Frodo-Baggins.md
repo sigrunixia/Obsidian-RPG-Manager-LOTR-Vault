@@ -1,11 +1,11 @@
 ---
-alias: ["Frodo Baggins"]
+alias: [Frodo Baggins]
 ---
 # Frodo Baggins
 
 ```RpgManagerData
 data: 
-  synopsis: "The nephew of Bilbo Baggins and the host of #Seed."
+  synopsis: "The nephew of Bilbo Baggins and the host of Seed."
   complete: false
   dob: "2985-09-22"
   death: 
@@ -13,7 +13,7 @@ data:
   pronoun: "he"
   images: 
     - path: "Z_images/Characters/Frodo.jpg"
-      caption: "I may be a #Seed, but I bounce back the fastest."
+      caption: "I may be a Seed, but I bounce back the fastest."
 relationships: 
   - type: "bidirectional"
     path: "The_Lord_of_the_Rings/Factions/Baggins-Family.md"
@@ -37,7 +37,6 @@ models:
 ## Player Character Notes
 
 - Not pictured- he has a single, green leaf sticking out of his head.
-- Birthday was taken from **[Frodo Baggins Tolkien Gateway Wiki](https://tolkiengateway.net/wiki/Frodo_Baggins)**
 
 ---
 
