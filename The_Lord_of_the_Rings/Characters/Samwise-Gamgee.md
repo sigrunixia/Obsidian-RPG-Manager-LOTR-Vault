@@ -38,6 +38,10 @@ models:
 
 ```RpgManagerID
 ### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
-id: "32-0-1"
-checksum: "ab1a14bfce133f41b62e900358a6106b"
+type: 32
+campaignSettings: 0
+id: 03fed71a-c116-44ee-b42c-50a6d347e283
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+positionInParent: 1
 ```

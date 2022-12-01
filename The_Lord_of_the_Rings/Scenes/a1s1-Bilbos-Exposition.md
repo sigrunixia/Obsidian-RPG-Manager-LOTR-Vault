@@ -44,6 +44,11 @@ models:
       relationship: "unidirectional"
 ```
 ```RpgManagerID
-id: "8-0-1/1/1/1"
-checksum: "76e1d01c07ff392020ea5b06e2c09906"
+### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
+type: 8
+campaignSettings: 0
+id: e1388bc9-44e7-48a3-aa27-4eb4e39f75bf
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 86b39544-654f-411d-8331-42c566307bf9
+positionInParent: 1
 ```

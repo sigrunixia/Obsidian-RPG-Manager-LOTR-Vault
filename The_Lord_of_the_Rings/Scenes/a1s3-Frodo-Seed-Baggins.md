@@ -15,7 +15,6 @@ data:
   duration: 0
   durations: []
   storyCircleStage: 
-
 ```
 
 ```RpgManager
@@ -51,6 +50,11 @@ models:
 ```
 
 ```RpgManagerID
-id: "8-0-1/1/1/3"
-checksum: "b5902cc51f741aa5dc4dd2b154cf3245"
+### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
+type: 8
+campaignSettings: 0
+id: fa358bdf-52d1-4558-9384-77b4a9fd910d
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 86b39544-654f-411d-8331-42c566307bf9
+positionInParent: 3
 ```

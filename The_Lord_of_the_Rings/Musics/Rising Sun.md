@@ -21,6 +21,10 @@ models:
 
 ```RpgManagerID
 ### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
-id: "2048-0-1"
-checksum: "1f41450cdd279defcceae0b12655fde2"
+type: 2048
+campaignSettings: 0
+id: ffa598be-1dc3-4459-b9a9-8cb9e1bf5493
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+positionInParent: 1
 ```

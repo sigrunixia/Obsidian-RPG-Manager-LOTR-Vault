@@ -13,9 +13,21 @@ data:
     - path: "Z_images/Clues/Footprints.jpg"
       caption: "These footprints look the same when observed from above, yet they are different sizes."
 relationships: 
-  - type: "bidirectional"
+  - type: "unidirectional"
+    path: "The_Lord_of_the_Rings/Locations/Gandalfs-Cart.md"
+    description: 
+  - type: "unidirectional"
+    path: "The_Lord_of_the_Rings/Locations/Hobbiton.md"
+    description: 
+  - type: "unidirectional"
     path: "The_Lord_of_the_Rings/Locations/Hobbiton-Party-Site.md"
-    description: "These footprints can be found if the party site is searched carefully for footprints. "
+    description: 
+  - type: "unidirectional"
+    path: "The_Lord_of_the_Rings/Clues/Half-Smoked-Combustomille.md"
+    description: "In a deep set of footprints, some Combustomille ash and resin can be found."
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/Subplots/The-Missing-Fireworks.md"
+    description: 
 ```
 
 ```RpgManager
@@ -50,6 +62,10 @@ models:
 
 ```RpgManagerID
 ### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
-id: "512-0-1"
-checksum: "3c62b425732a72f4981d94904e0c5b95"
+type: 512
+campaignSettings: 0
+id: c43e6dbc-aafa-4613-8309-cbb41cb645ea
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+positionInParent: 1
 ```

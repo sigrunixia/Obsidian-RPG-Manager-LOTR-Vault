@@ -63,6 +63,10 @@ models:
 ---
 ```RpgManagerID
 ### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
-id: "4096-0-1"
-checksum: "31e3cc3926f10e2d4ecd79611c953137"
+type: 4096
+campaignSettings: 0
+id: a6199d34-0e68-4cae-b91c-469e8688b3a2
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+positionInParent: 1
 ```

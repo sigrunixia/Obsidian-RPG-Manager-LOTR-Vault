@@ -1,9 +1,9 @@
 {
   "automaticMove": true,
   "templateFolder": "",
-  "imagesFolder": "Z_images",
+  "imagesFolder": "",
   "YouTubeKey": "",
-  "previousVersion": "3.1",
+  "previousVersion": "3.4",
   "usePlotStructures": false,
   "useSceneAnalyser": false,
   "advanced": {
@@ -108,7 +108,7 @@
         "fields": [
           {
             "field": 1,
-            "checked": true,
+            "checked": false,
             "required": false
           },
           {
@@ -134,7 +134,7 @@
         "fields": [
           {
             "field": 1,
-            "checked": true,
+            "checked": false,
             "required": false
           },
           {
@@ -253,17 +253,17 @@
           },
           {
             "field": 11,
-            "checked": true,
+            "checked": false,
             "required": false
           },
           {
             "field": 12,
-            "checked": true,
+            "checked": false,
             "required": false
           },
           {
             "field": 13,
-            "checked": true,
+            "checked": false,
             "required": false
           }
         ]

@@ -12,8 +12,8 @@ data:
   pronoun: "she"
   complete: false
   images: 
-    - path: "Lord_of_the_Rings/Z_Images/Non_Player_Characters/Halflings/Lobelia.jpg"
-      caption: "One way or another, that hovel will be mine."
+    - path: "Z_images/Non_Player_Characters/Halflings/Lobelia.jpg"
+      caption: "It shall all be mine."
 relationships: 
   - type: "unidirectional"
     path: "0_Lord_of_the_Rings/Characters/Samwise-Gamgee.md"
@@ -52,6 +52,10 @@ models:
 
 ```RpgManagerID
 ### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
-id: "64-0-1"
-checksum: "71a106a489f1f9135d6e84b22a736b8c"
+type: 64
+campaignSettings: 0
+id: db34d30e-cb44-4ba6-99b3-b8823efc7c2e
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+positionInParent: 1
 ```

@@ -23,8 +23,8 @@ data:
   date: "3018-10-20"
   synopsis: "The Ring has been found. Mordor awakens. A battle that was once thought over starts again. Frodo and Sam must take the journey of their lives and sacrifice everything and everyone to see the Ring destroyed."
   complete: true
-  currentAdventureId: "2/1/1"
-  currentActId: "4/1/1/1"
+  currentAdventureId: "07acdf84-125a-44fe-b02f-35ebfc763d63"
+  currentActId: "86b39544-654f-411d-8331-42c566307bf9"
   currentSessionId: "16/1/1"
 ```
 ```RpgManager
@@ -56,6 +56,10 @@ models:
 ```
 ```RpgManagerID
 ### DO NOT EDIT MANUALLY IF NOT INSTRUCTED TO DO SO ###
-id: "1-0-1"
-checksum: "a0d7576a2a8b514e08e08544a42bdaaa"
+type: 1
+campaignSettings: 0
+id: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+parentId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
+positionInParent: 1
 ```

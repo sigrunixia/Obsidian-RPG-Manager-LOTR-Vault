@@ -1118,6 +1118,22 @@ textarea:hover {
   width: 100%;
   max-width: 100%;
 }
+.rpg-manager-table .rpg-manager-table-draggable, .rpg-manager-table .rpg-manager-table-draggable-title {
+  color: var(--rpg-manager-colour-text-light);
+}
+.rpg-manager-table .rpg-manager-table-draggable span > svg, .rpg-manager-table .rpg-manager-table-draggable-title span > svg {
+  height: var(--icon-xs);
+  width: var(--icon-xs);
+}
+.rpg-manager-table .rpg-manager-table-draggable {
+  cursor: pointer;
+}
+.rpg-manager-table .rpg-manager-table-draggable span {
+  display: none;
+}
+.rpg-manager-table .rpg-manager-table-draggable:hover > span {
+  display: block;
+}
 .rpg-manager-table .inline {
   white-space: nowrap;
 }
@@ -1367,24 +1383,51 @@ textarea:hover {
   margin-bottom: 25px;
 }
 .rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-recap .rpg-manager-wizard-main-recap-description {
-  font-size: 0.9em;
-  font-weight: 300;
+  font-size: 0.8em;
+  font-weight: 200;
   margin-bottom: 1em;
+}
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-recap .rpg-manager-wizard-main-recap-description p {
+  margin: 0px;
 }
 .rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content {
   float: left;
   width: calc(100% - 200px);
-  padding-left: 50px;
+  padding-left: 25px;
 }
-.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content textarea {
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content .rpg-manager-wizard-main-content-title,
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-recap .rpg-manager-wizard-main-recap-title,
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container-clues-title {
+  font-size: 0.8em;
+  color: var(--rpg-manager-colour-text-light);
+}
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container {
+  width: 100%;
+}
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-text,
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-clues-text {
+  float: left;
+}
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-text textarea,
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-clues-text textarea {
   width: 100%;
   min-height: 200px;
 }
-.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content .rpg-manager-wizard-main-content-title,
-.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-recap .rpg-manager-wizard-main-recap-title {
-  font-variant: small-caps;
-  font-size: 0.8em;
-  color: var(--rpg-manager-colour-text-very-light);
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-text {
+  width: 100%;
+}
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-clues-text {
+  width: 50%;
+}
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-clues {
+  float: right;
+  width: 50%;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+.rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-main .rpg-manager-wizard-main-content-container .rpg-manager-wizard-main-content-container-clues textarea {
+  width: 100%;
+  min-height: 120px;
 }
 .rpg-manager-modal .rpg-manager-modal-wizard .rpg-manager-wizard-buttons {
   width: 100%;
@@ -3015,6 +3058,29 @@ textarea:hover {
     width: 100%;
   }
 }
+.rpg-manager-help {
+  font-size: 10px;
+  font-weight: 100;
+  color: var(--rpg-manager-colour-text-light);
+  padding: 2px 10px 2px 0px;
+  margin-left: 10px;
+}
+
+.rpg-manager-help-content-container {
+  position: absolute;
+  min-width: 300px;
+  padding: 10px;
+  background-color: var(--background-primary);
+  border: solid 1px var(--rpg-manager-colour-border);
+  z-index: 1;
+}
+.rpg-manager-help-content-container .rpg-manager-help-content {
+  position: relative;
+  width: 100%;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
 .rpg-manager-modal {
   display: block;
   padding: 20px;
@@ -3104,7 +3170,7 @@ textarea:hover {
   padding: 20px;
   border-bottom: solid 1px var(--background-modifier-border);
   display: flex;
-  gap: 25px;
+  gap: 10px;
 }
 .modal-content .rpg-manager-modal-relationships .rpg-manager-modal-relationships-navigation .separator, .modal-content .rpg-manager-modal-relationships .rpg-manager-modal-relationships-navigation .link {
   float: left;
@@ -3169,4 +3235,91 @@ textarea:hover {
   background-color: var(--background-secondary);
   min-width: 10px;
   width: 100%;
+}
+
+.rpg-manager-scene-builder-confirmation {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  color: var(--text-on-accent);
+  text-align: center;
+  padding-top: 25%;
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.rpg-manager-scene-builder .scenes-container table {
+  width: 100%;
+}
+.rpg-manager-scene-builder .scenes-container table tr > td > input[type=text]:disabled,
+.rpg-manager-scene-builder .scenes-container table tr > td > select:disabled {
+  color: var(--rpg-manager-colour-text-very-light);
+}
+.rpg-manager-scene-builder .scenes-container table tr > td > input[type=checkbox]:disabled {
+  background-color: var(--rpg-manager-colour-text-very-light);
+}
+.rpg-manager-scene-builder .scenes-container table tr > td.scenes-container-table-title {
+  width: 150px;
+  max-width: 150px;
+}
+.rpg-manager-scene-builder .scenes-container table tr > td.scenes-container-table-stage {
+  width: 50px;
+  max-width: 50px;
+  font-size: 0.9em;
+}
+.rpg-manager-scene-builder .scenes-container table tr > td.scenes-container-table-stage select {
+  width: 50px;
+  max-width: 50px;
+}
+.rpg-manager-scene-builder .scenes-container table tr > td.scenes-container-table-goal {
+  width: calc(100% - 350px);
+}
+.rpg-manager-scene-builder .scenes-container table tr > td.scenes-container-table-type {
+  width: 100px;
+  max-width: 100px;
+}
+.rpg-manager-scene-builder .scenes-container table tr > td.scenes-container-table-type select {
+  width: 100px;
+  max-width: 100px;
+}
+.rpg-manager-scene-builder .scenes-container table tr > td.scenes-container-table-exciting {
+  width: 50px;
+  max-width: 50px;
+  text-align: center;
+}
+.rpg-manager-scene-builder .rpg-manager-scene-builder-confirmation-button {
+  margin-top: 30px;
+  float: right;
+}
+.rpg-manager-scene-builder .rpg-manager-scene-builder-plot {
+  width: 100%;
+  font-size: 0.9em;
+  border: solid 1px var(--rpg-manager-colour-border);
+  margin: 10px;
+  padding: 10px;
+}
+.rpg-manager-scene-builder .rpg-manager-scene-builder-plot .rpg-manager-scene-builder-plot-line {
+  position: relative;
+}
+.rpg-manager-scene-builder .rpg-manager-scene-builder-plot .rpg-manager-scene-builder-plot-line .rpg-manager-scene-builder-plot-line-title,
+.rpg-manager-scene-builder .rpg-manager-scene-builder-plot .rpg-manager-scene-builder-plot-line .rpg-manager-scene-builder-plot-line-description {
+  float: left;
+}
+.rpg-manager-scene-builder .rpg-manager-scene-builder-plot .rpg-manager-scene-builder-plot-line .rpg-manager-scene-builder-plot-line-title {
+  width: 50px;
+  max-width: 50px;
+  font-weight: 700;
+}
+.rpg-manager-scene-builder .rpg-manager-scene-builder-plot .rpg-manager-scene-builder-plot-line .rpg-manager-scene-builder-plot-line-description {
+  width: calc(100% - 50px);
+  padding-left: 20px;
+  font-weight: 300;
+}
+.rpg-manager-scene-builder .rpg-manager-scene-builder-plot .rpg-manager-scene-builder-plot-line .rpg-manager-scene-builder-plot-line-description p {
+  margin: 0;
 }
