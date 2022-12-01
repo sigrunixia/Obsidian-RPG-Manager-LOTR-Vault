@@ -1,8 +1,8 @@
 # Obsidian RPG-Manager Lord of the Rings Sample Vault
 
-This is a filled Lord of the Ring's Vault to allow you to see how [**Obsidian RPG Manager**](https://github.com/carlonicora/obsidian-rpg-manager) can work with with your campaign. It is ready to explore, or to begin playing with a group of 2-4 players as one of the halflings. 
+This is a filled Lord of the Ring's Vault to allow you to see how **[Obsidian RPG Manager](https://github.com/carlonicora/obsidian-rpg-manager)** (RPGM) can work with with your campaign. It is ready to explore, or to begin playing with a group of 2-4 players as one of the halflings. 
 
-If you are new to using the plugin, it is recommended you read the Beginner's Guide first. 
+If you are new to using the plugin, it is recommended you read the **[RPGM Beginner's Guide](https://github.com/carlonicora/obsidian-rpg-manager/wiki/Beginner's-Guide)** first. 
 
 ## Suggested TTRPG Systems
 
@@ -10,10 +10,10 @@ As this is a sample vault and meant to show off a variety of features, it is not
 
 Some suggestions are:
 
-- [**Caumaldë: The Girl Scouts of Middle Earth**](https://www.reddit.com/r/lotr/comments/sh1dyi/updated_expanded_by_popular_request_caumaldë_the/)
+- **[Caumaldë: The Girl Scouts of Middle Earth](https://www.reddit.com/r/lotr/comments/sh1dyi/updated_expanded_by_popular_request_caumaldë_the/)**
 - RAW
 
-Alternatively, if you wanted to try an wargames style campaign between factions, we suggest using [**Muster**](https://www.drivethrurpg.com/product/413382/Muster?filters=0_0_100_0_0). We also found that the more rule-heavy [**Ironsworn**](https://www.drivethrurpg.com/product/238369/Ironsworn?manufacturers_id=12876) worked well in testing. 
+Alternatively, if you wanted to try an wargames style campaign between factions, we suggest using **[Muster](https://www.drivethrurpg.com/product/413382/Muster?filters=0_0_100_0_0)**. We also found that the more rule-heavy **[Ironsworn](https://www.drivethrurpg.com/product/238369/Ironsworn?manufacturers_id=12876)** worked well in testing. 
 
 ### Legal Disclaimer
 
