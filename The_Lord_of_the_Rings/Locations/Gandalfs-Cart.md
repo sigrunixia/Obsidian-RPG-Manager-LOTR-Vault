@@ -1,10 +1,10 @@
 ---
-alias: []
+alias: ["Gandalf's Cart"]
 tags: []
 ---
 ```RpgManagerData
 data: 
-  synopsis: 
+  synopsis: "The simple cart that Gandalf rode to town in."
   complete: false
   address: 
 relationships: []

@@ -1,5 +1,5 @@
 ---
-alias: []
+alias: ["Rising Sun"]
 tags: []
 ---
 ```RpgManagerData
