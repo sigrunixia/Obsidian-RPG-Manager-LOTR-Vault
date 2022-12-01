@@ -1,19 +1,27 @@
 # Obsidian RPG-Manager Lord of the Rings Sample Vault
 
-This is a filled Lord of the Ring's Vault to allow you to see how **[Obsidian RPG Manager](https://github.com/carlonicora/obsidian-rpg-manager)** (RPGM) can work with with your campaign. It is ready to explore, or to begin playing with a group of 2-4 players as one of the halflings. 
+This is a filled Lord of the Ring's Vault to allow you to see how **[Obsidian RPG Manager](https://github.com/carlonicora/obsidian-rpg-manager)** (RPGM) can work with with your campaign. It is ready to explore, or to begin playing with a group of 2-4 players as one of the halflings.
 
-If you are new to using the plugin, it is recommended you read the **[RPGM Beginner's Guide](https://github.com/carlonicora/obsidian-rpg-manager/wiki/Beginner's-Guide)** first. 
+If you are new to using the plugin, it is recommended you read the **[RPGM Beginner's Guide](https://github.com/carlonicora/obsidian-rpg-manager/wiki/Beginner's-Guide)** first.
+
+## Other Obsidian Plugins
+
+The following plugin's are included and all rights belong to their respective owners.
+
+1. **[ALX-Folder Note](https://github.com/aidenlx/alx-folder-note)**
+2. **[Obsidian Fantasy Calendar](https://github.com/fantasycalendar/obsidian-fantasy-calendar)**
+3. **[Consistent Attatchments and Links](https://github.com/dy-sh/obsidian-consistent-attachments-and-links)**
 
 ## Suggested TTRPG Systems
 
-As this is a sample vault and meant to show off a variety of features, it is not as structured or customized as your dedicated campaign vault would be. As such, we suggest if you create or utilize the pre-made characters, that you use a more rules-lite system. 
+As this is a sample vault and meant to show off a variety of features, it is not as structured or customized as your dedicated campaign vault would be. As such, we suggest if you create or utilize the pre-made characters, that you use a more rules-lite system.
 
 Some suggestions are:
 
 - **[Caumaldë: The Girl Scouts of Middle Earth](https://www.reddit.com/r/lotr/comments/sh1dyi/updated_expanded_by_popular_request_caumaldë_the/)**
 - RAW
 
-Alternatively, if you wanted to try an wargames style campaign between factions, we suggest using **[Muster](https://www.drivethrurpg.com/product/413382/Muster?filters=0_0_100_0_0)**. We also found that the more rule-heavy **[Ironsworn](https://www.drivethrurpg.com/product/238369/Ironsworn?manufacturers_id=12876)** worked well in testing. 
+Alternatively, if you wanted to try an wargames style campaign between factions, we suggest using **[Muster](https://www.drivethrurpg.com/product/413382/Muster?filters=0_0_100_0_0)**. We also found that the more rule-heavy **[Ironsworn](https://www.drivethrurpg.com/product/238369/Ironsworn?manufacturers_id=12876)** worked well in testing.
 
 ### Legal Disclaimer
 
@@ -25,5 +33,4 @@ All rights to RPG Manager are distributed under the MIT License as stated in [*
 
 All rights to the content in the associated documentation that do not belong to the aforementioned parties, are distributed under the [**Creative Commons 1.0**](https://creativecommons.org/licenses/by/1.0/).
 
-All images used unless stated otherwise below the image, are sourced from [**Neural.love**](https://neural.love/) and licensed under [**Creative Commons 1.0**](https://creativecommons.org/licenses/by/1.0/). If you are an artist and would like to donate (payment would threaten the fair-use attribution) a small portrait of art to replace the machine-learning art, please reach out. 
-
+All images used unless stated otherwise below the image, are sourced from [**Neural.love**](https://neural.love/) and licensed under [**Creative Commons 1.0**](https://creativecommons.org/licenses/by/1.0/). If you are an artist and would like to donate (payment would threaten the fair-use attribution) a small portrait of art to replace the machine-learning art, please reach out.

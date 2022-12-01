@@ -1,7 +1,7 @@
 {
   "automaticMove": true,
   "templateFolder": "",
-  "imagesFolder": "",
+  "imagesFolder": "Z_images",
   "YouTubeKey": "",
   "previousVersion": "3.4",
   "usePlotStructures": false,
@@ -253,17 +253,17 @@
           },
           {
             "field": 11,
-            "checked": false,
+            "checked": true,
             "required": false
           },
           {
             "field": 12,
-            "checked": false,
+            "checked": true,
             "required": false
           },
           {
             "field": 13,
-            "checked": false,
+            "checked": true,
             "required": false
           }
         ]
