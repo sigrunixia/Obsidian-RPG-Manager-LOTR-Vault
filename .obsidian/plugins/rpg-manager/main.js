@@ -1018,6 +1018,328 @@ var ComponentDuplicatedError = class extends AbstractRpgManagerError {
   }
 };
 
+// node_modules/ts-md5/dist/esm/md5.js
+var Md5 = class {
+  constructor() {
+    this._dataLength = 0;
+    this._bufferLength = 0;
+    this._state = new Int32Array(4);
+    this._buffer = new ArrayBuffer(68);
+    this._buffer8 = new Uint8Array(this._buffer, 0, 68);
+    this._buffer32 = new Uint32Array(this._buffer, 0, 17);
+    this.start();
+  }
+  static hashStr(str, raw = false) {
+    return this.onePassHasher.start().appendStr(str).end(raw);
+  }
+  static hashAsciiStr(str, raw = false) {
+    return this.onePassHasher.start().appendAsciiStr(str).end(raw);
+  }
+  static _hex(x) {
+    const hc = Md5.hexChars;
+    const ho = Md5.hexOut;
+    let n2;
+    let offset2;
+    let j;
+    let i;
+    for (i = 0; i < 4; i += 1) {
+      offset2 = i * 8;
+      n2 = x[i];
+      for (j = 0; j < 8; j += 2) {
+        ho[offset2 + 1 + j] = hc.charAt(n2 & 15);
+        n2 >>>= 4;
+        ho[offset2 + 0 + j] = hc.charAt(n2 & 15);
+        n2 >>>= 4;
+      }
+    }
+    return ho.join("");
+  }
+  static _md5cycle(x, k) {
+    let a = x[0];
+    let b = x[1];
+    let c = x[2];
+    let d = x[3];
+    a += (b & c | ~b & d) + k[0] - 680876936 | 0;
+    a = (a << 7 | a >>> 25) + b | 0;
+    d += (a & b | ~a & c) + k[1] - 389564586 | 0;
+    d = (d << 12 | d >>> 20) + a | 0;
+    c += (d & a | ~d & b) + k[2] + 606105819 | 0;
+    c = (c << 17 | c >>> 15) + d | 0;
+    b += (c & d | ~c & a) + k[3] - 1044525330 | 0;
+    b = (b << 22 | b >>> 10) + c | 0;
+    a += (b & c | ~b & d) + k[4] - 176418897 | 0;
+    a = (a << 7 | a >>> 25) + b | 0;
+    d += (a & b | ~a & c) + k[5] + 1200080426 | 0;
+    d = (d << 12 | d >>> 20) + a | 0;
+    c += (d & a | ~d & b) + k[6] - 1473231341 | 0;
+    c = (c << 17 | c >>> 15) + d | 0;
+    b += (c & d | ~c & a) + k[7] - 45705983 | 0;
+    b = (b << 22 | b >>> 10) + c | 0;
+    a += (b & c | ~b & d) + k[8] + 1770035416 | 0;
+    a = (a << 7 | a >>> 25) + b | 0;
+    d += (a & b | ~a & c) + k[9] - 1958414417 | 0;
+    d = (d << 12 | d >>> 20) + a | 0;
+    c += (d & a | ~d & b) + k[10] - 42063 | 0;
+    c = (c << 17 | c >>> 15) + d | 0;
+    b += (c & d | ~c & a) + k[11] - 1990404162 | 0;
+    b = (b << 22 | b >>> 10) + c | 0;
+    a += (b & c | ~b & d) + k[12] + 1804603682 | 0;
+    a = (a << 7 | a >>> 25) + b | 0;
+    d += (a & b | ~a & c) + k[13] - 40341101 | 0;
+    d = (d << 12 | d >>> 20) + a | 0;
+    c += (d & a | ~d & b) + k[14] - 1502002290 | 0;
+    c = (c << 17 | c >>> 15) + d | 0;
+    b += (c & d | ~c & a) + k[15] + 1236535329 | 0;
+    b = (b << 22 | b >>> 10) + c | 0;
+    a += (b & d | c & ~d) + k[1] - 165796510 | 0;
+    a = (a << 5 | a >>> 27) + b | 0;
+    d += (a & c | b & ~c) + k[6] - 1069501632 | 0;
+    d = (d << 9 | d >>> 23) + a | 0;
+    c += (d & b | a & ~b) + k[11] + 643717713 | 0;
+    c = (c << 14 | c >>> 18) + d | 0;
+    b += (c & a | d & ~a) + k[0] - 373897302 | 0;
+    b = (b << 20 | b >>> 12) + c | 0;
+    a += (b & d | c & ~d) + k[5] - 701558691 | 0;
+    a = (a << 5 | a >>> 27) + b | 0;
+    d += (a & c | b & ~c) + k[10] + 38016083 | 0;
+    d = (d << 9 | d >>> 23) + a | 0;
+    c += (d & b | a & ~b) + k[15] - 660478335 | 0;
+    c = (c << 14 | c >>> 18) + d | 0;
+    b += (c & a | d & ~a) + k[4] - 405537848 | 0;
+    b = (b << 20 | b >>> 12) + c | 0;
+    a += (b & d | c & ~d) + k[9] + 568446438 | 0;
+    a = (a << 5 | a >>> 27) + b | 0;
+    d += (a & c | b & ~c) + k[14] - 1019803690 | 0;
+    d = (d << 9 | d >>> 23) + a | 0;
+    c += (d & b | a & ~b) + k[3] - 187363961 | 0;
+    c = (c << 14 | c >>> 18) + d | 0;
+    b += (c & a | d & ~a) + k[8] + 1163531501 | 0;
+    b = (b << 20 | b >>> 12) + c | 0;
+    a += (b & d | c & ~d) + k[13] - 1444681467 | 0;
+    a = (a << 5 | a >>> 27) + b | 0;
+    d += (a & c | b & ~c) + k[2] - 51403784 | 0;
+    d = (d << 9 | d >>> 23) + a | 0;
+    c += (d & b | a & ~b) + k[7] + 1735328473 | 0;
+    c = (c << 14 | c >>> 18) + d | 0;
+    b += (c & a | d & ~a) + k[12] - 1926607734 | 0;
+    b = (b << 20 | b >>> 12) + c | 0;
+    a += (b ^ c ^ d) + k[5] - 378558 | 0;
+    a = (a << 4 | a >>> 28) + b | 0;
+    d += (a ^ b ^ c) + k[8] - 2022574463 | 0;
+    d = (d << 11 | d >>> 21) + a | 0;
+    c += (d ^ a ^ b) + k[11] + 1839030562 | 0;
+    c = (c << 16 | c >>> 16) + d | 0;
+    b += (c ^ d ^ a) + k[14] - 35309556 | 0;
+    b = (b << 23 | b >>> 9) + c | 0;
+    a += (b ^ c ^ d) + k[1] - 1530992060 | 0;
+    a = (a << 4 | a >>> 28) + b | 0;
+    d += (a ^ b ^ c) + k[4] + 1272893353 | 0;
+    d = (d << 11 | d >>> 21) + a | 0;
+    c += (d ^ a ^ b) + k[7] - 155497632 | 0;
+    c = (c << 16 | c >>> 16) + d | 0;
+    b += (c ^ d ^ a) + k[10] - 1094730640 | 0;
+    b = (b << 23 | b >>> 9) + c | 0;
+    a += (b ^ c ^ d) + k[13] + 681279174 | 0;
+    a = (a << 4 | a >>> 28) + b | 0;
+    d += (a ^ b ^ c) + k[0] - 358537222 | 0;
+    d = (d << 11 | d >>> 21) + a | 0;
+    c += (d ^ a ^ b) + k[3] - 722521979 | 0;
+    c = (c << 16 | c >>> 16) + d | 0;
+    b += (c ^ d ^ a) + k[6] + 76029189 | 0;
+    b = (b << 23 | b >>> 9) + c | 0;
+    a += (b ^ c ^ d) + k[9] - 640364487 | 0;
+    a = (a << 4 | a >>> 28) + b | 0;
+    d += (a ^ b ^ c) + k[12] - 421815835 | 0;
+    d = (d << 11 | d >>> 21) + a | 0;
+    c += (d ^ a ^ b) + k[15] + 530742520 | 0;
+    c = (c << 16 | c >>> 16) + d | 0;
+    b += (c ^ d ^ a) + k[2] - 995338651 | 0;
+    b = (b << 23 | b >>> 9) + c | 0;
+    a += (c ^ (b | ~d)) + k[0] - 198630844 | 0;
+    a = (a << 6 | a >>> 26) + b | 0;
+    d += (b ^ (a | ~c)) + k[7] + 1126891415 | 0;
+    d = (d << 10 | d >>> 22) + a | 0;
+    c += (a ^ (d | ~b)) + k[14] - 1416354905 | 0;
+    c = (c << 15 | c >>> 17) + d | 0;
+    b += (d ^ (c | ~a)) + k[5] - 57434055 | 0;
+    b = (b << 21 | b >>> 11) + c | 0;
+    a += (c ^ (b | ~d)) + k[12] + 1700485571 | 0;
+    a = (a << 6 | a >>> 26) + b | 0;
+    d += (b ^ (a | ~c)) + k[3] - 1894986606 | 0;
+    d = (d << 10 | d >>> 22) + a | 0;
+    c += (a ^ (d | ~b)) + k[10] - 1051523 | 0;
+    c = (c << 15 | c >>> 17) + d | 0;
+    b += (d ^ (c | ~a)) + k[1] - 2054922799 | 0;
+    b = (b << 21 | b >>> 11) + c | 0;
+    a += (c ^ (b | ~d)) + k[8] + 1873313359 | 0;
+    a = (a << 6 | a >>> 26) + b | 0;
+    d += (b ^ (a | ~c)) + k[15] - 30611744 | 0;
+    d = (d << 10 | d >>> 22) + a | 0;
+    c += (a ^ (d | ~b)) + k[6] - 1560198380 | 0;
+    c = (c << 15 | c >>> 17) + d | 0;
+    b += (d ^ (c | ~a)) + k[13] + 1309151649 | 0;
+    b = (b << 21 | b >>> 11) + c | 0;
+    a += (c ^ (b | ~d)) + k[4] - 145523070 | 0;
+    a = (a << 6 | a >>> 26) + b | 0;
+    d += (b ^ (a | ~c)) + k[11] - 1120210379 | 0;
+    d = (d << 10 | d >>> 22) + a | 0;
+    c += (a ^ (d | ~b)) + k[2] + 718787259 | 0;
+    c = (c << 15 | c >>> 17) + d | 0;
+    b += (d ^ (c | ~a)) + k[9] - 343485551 | 0;
+    b = (b << 21 | b >>> 11) + c | 0;
+    x[0] = a + x[0] | 0;
+    x[1] = b + x[1] | 0;
+    x[2] = c + x[2] | 0;
+    x[3] = d + x[3] | 0;
+  }
+  start() {
+    this._dataLength = 0;
+    this._bufferLength = 0;
+    this._state.set(Md5.stateIdentity);
+    return this;
+  }
+  appendStr(str) {
+    const buf8 = this._buffer8;
+    const buf32 = this._buffer32;
+    let bufLen = this._bufferLength;
+    let code;
+    let i;
+    for (i = 0; i < str.length; i += 1) {
+      code = str.charCodeAt(i);
+      if (code < 128) {
+        buf8[bufLen++] = code;
+      } else if (code < 2048) {
+        buf8[bufLen++] = (code >>> 6) + 192;
+        buf8[bufLen++] = code & 63 | 128;
+      } else if (code < 55296 || code > 56319) {
+        buf8[bufLen++] = (code >>> 12) + 224;
+        buf8[bufLen++] = code >>> 6 & 63 | 128;
+        buf8[bufLen++] = code & 63 | 128;
+      } else {
+        code = (code - 55296) * 1024 + (str.charCodeAt(++i) - 56320) + 65536;
+        if (code > 1114111) {
+          throw new Error("Unicode standard supports code points up to U+10FFFF");
+        }
+        buf8[bufLen++] = (code >>> 18) + 240;
+        buf8[bufLen++] = code >>> 12 & 63 | 128;
+        buf8[bufLen++] = code >>> 6 & 63 | 128;
+        buf8[bufLen++] = code & 63 | 128;
+      }
+      if (bufLen >= 64) {
+        this._dataLength += 64;
+        Md5._md5cycle(this._state, buf32);
+        bufLen -= 64;
+        buf32[0] = buf32[16];
+      }
+    }
+    this._bufferLength = bufLen;
+    return this;
+  }
+  appendAsciiStr(str) {
+    const buf8 = this._buffer8;
+    const buf32 = this._buffer32;
+    let bufLen = this._bufferLength;
+    let i;
+    let j = 0;
+    for (; ; ) {
+      i = Math.min(str.length - j, 64 - bufLen);
+      while (i--) {
+        buf8[bufLen++] = str.charCodeAt(j++);
+      }
+      if (bufLen < 64) {
+        break;
+      }
+      this._dataLength += 64;
+      Md5._md5cycle(this._state, buf32);
+      bufLen = 0;
+    }
+    this._bufferLength = bufLen;
+    return this;
+  }
+  appendByteArray(input) {
+    const buf8 = this._buffer8;
+    const buf32 = this._buffer32;
+    let bufLen = this._bufferLength;
+    let i;
+    let j = 0;
+    for (; ; ) {
+      i = Math.min(input.length - j, 64 - bufLen);
+      while (i--) {
+        buf8[bufLen++] = input[j++];
+      }
+      if (bufLen < 64) {
+        break;
+      }
+      this._dataLength += 64;
+      Md5._md5cycle(this._state, buf32);
+      bufLen = 0;
+    }
+    this._bufferLength = bufLen;
+    return this;
+  }
+  getState() {
+    const s2 = this._state;
+    return {
+      buffer: String.fromCharCode.apply(null, Array.from(this._buffer8)),
+      buflen: this._bufferLength,
+      length: this._dataLength,
+      state: [s2[0], s2[1], s2[2], s2[3]]
+    };
+  }
+  setState(state) {
+    const buf = state.buffer;
+    const x = state.state;
+    const s2 = this._state;
+    let i;
+    this._dataLength = state.length;
+    this._bufferLength = state.buflen;
+    s2[0] = x[0];
+    s2[1] = x[1];
+    s2[2] = x[2];
+    s2[3] = x[3];
+    for (i = 0; i < buf.length; i += 1) {
+      this._buffer8[i] = buf.charCodeAt(i);
+    }
+  }
+  end(raw = false) {
+    const bufLen = this._bufferLength;
+    const buf8 = this._buffer8;
+    const buf32 = this._buffer32;
+    const i = (bufLen >> 2) + 1;
+    this._dataLength += bufLen;
+    const dataBitsLen = this._dataLength * 8;
+    buf8[bufLen] = 128;
+    buf8[bufLen + 1] = buf8[bufLen + 2] = buf8[bufLen + 3] = 0;
+    buf32.set(Md5.buffer32Identity.subarray(i), i);
+    if (bufLen > 55) {
+      Md5._md5cycle(this._state, buf32);
+      buf32.set(Md5.buffer32Identity);
+    }
+    if (dataBitsLen <= 4294967295) {
+      buf32[14] = dataBitsLen;
+    } else {
+      const matches = dataBitsLen.toString(16).match(/(.*?)(.{0,8})$/);
+      if (matches === null) {
+        return;
+      }
+      const lo = parseInt(matches[2], 16);
+      const hi = parseInt(matches[1], 16) || 0;
+      buf32[14] = lo;
+      buf32[15] = hi;
+    }
+    Md5._md5cycle(this._state, buf32);
+    return raw ? this._state : Md5._hex(this._state);
+  }
+};
+Md5.stateIdentity = new Int32Array([1732584193, -271733879, -1732584194, 271733878]);
+Md5.buffer32Identity = new Int32Array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+Md5.hexChars = "0123456789abcdef";
+Md5.hexOut = [];
+Md5.onePassHasher = new Md5();
+if (Md5.hashStr("hello") !== "5d41402abc4b2a76b9719d911017c592") {
+  throw new Error("Md5 self test failed.");
+}
+
 // src/services/indexService/Index.ts
 var Index = class {
   constructor(_api, type, _id, _campaignId, _parentId) {
@@ -1055,10 +1377,68 @@ var Index = class {
     }
     return this._parentPosition;
   }
+  get checksum() {
+    const md5 = new Md5();
+    md5.appendStr(this._id);
+    md5.appendStr(this._campaignId);
+    md5.appendStr(this._parentId);
+    md5.appendStr(this.positionInParent.toString());
+    md5.appendStr(this.campaignSettings.toString());
+    md5.appendStr(this.type.toString());
+    const response = md5.end();
+    return response;
+  }
 };
 
+// node_modules/uuid/dist/esm-browser/rng.js
+var getRandomValues;
+var rnds8 = new Uint8Array(16);
+function rng() {
+  if (!getRandomValues) {
+    getRandomValues = typeof crypto !== "undefined" && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
+    if (!getRandomValues) {
+      throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");
+    }
+  }
+  return getRandomValues(rnds8);
+}
+
+// node_modules/uuid/dist/esm-browser/stringify.js
+var byteToHex = [];
+for (let i = 0; i < 256; ++i) {
+  byteToHex.push((i + 256).toString(16).slice(1));
+}
+function unsafeStringify(arr, offset2 = 0) {
+  return (byteToHex[arr[offset2 + 0]] + byteToHex[arr[offset2 + 1]] + byteToHex[arr[offset2 + 2]] + byteToHex[arr[offset2 + 3]] + "-" + byteToHex[arr[offset2 + 4]] + byteToHex[arr[offset2 + 5]] + "-" + byteToHex[arr[offset2 + 6]] + byteToHex[arr[offset2 + 7]] + "-" + byteToHex[arr[offset2 + 8]] + byteToHex[arr[offset2 + 9]] + "-" + byteToHex[arr[offset2 + 10]] + byteToHex[arr[offset2 + 11]] + byteToHex[arr[offset2 + 12]] + byteToHex[arr[offset2 + 13]] + byteToHex[arr[offset2 + 14]] + byteToHex[arr[offset2 + 15]]).toLowerCase();
+}
+
+// node_modules/uuid/dist/esm-browser/native.js
+var randomUUID = typeof crypto !== "undefined" && crypto.randomUUID && crypto.randomUUID.bind(crypto);
+var native_default = {
+  randomUUID
+};
+
+// node_modules/uuid/dist/esm-browser/v4.js
+function v4(options, buf, offset2) {
+  if (native_default.randomUUID && !buf && !options) {
+    return native_default.randomUUID();
+  }
+  options = options || {};
+  const rnds = options.random || (options.rng || rng)();
+  rnds[6] = rnds[6] & 15 | 64;
+  rnds[8] = rnds[8] & 63 | 128;
+  if (buf) {
+    offset2 = offset2 || 0;
+    for (let i = 0; i < 16; ++i) {
+      buf[offset2 + i] = rnds[i];
+    }
+    return buf;
+  }
+  return unsafeStringify(rnds);
+}
+var v4_default = v4;
+
 // src/services/indexService/IndexService.ts
-var import_crypto = require("crypto");
 var IndexService = class extends AbstractService {
   create(type, id, campaignId, parentId, positionInParent, campaignSettings) {
     const response = new Index(this.api, type, id, campaignId, parentId);
@@ -1073,7 +1453,7 @@ var IndexService = class extends AbstractService {
     return response;
   }
   createUUID() {
-    return (0, import_crypto.randomUUID)();
+    return v4_default();
   }
 };
 
@@ -1629,7 +2009,7 @@ var CodeblockImageWorker = class {
     return __async(this, null, function* () {
       if (domain.codeblock.data === void 0)
         domain.codeblock.data = {};
-      if (domain.codeblock.data.images === void 0)
+      if (domain.codeblock.data.images == void 0)
         domain.codeblock.data.images = [];
       let found;
       for (let index = 0; index < domain.codeblock.data.images.length; index++) {
@@ -1715,7 +2095,7 @@ var RelationshipService = class extends AbstractService {
             basename = nameAndAlias.substring(0, aliasIndex);
           }
         }
-        if (skipHiddenLink && basename !== void 0) {
+        if (!skipHiddenLink && basename !== void 0) {
           let path2 = void 0;
           const allFiles = this.api.app.vault.getMarkdownFiles();
           for (let filesIndex = 0; filesIndex < allFiles.length; filesIndex++) {
@@ -2065,328 +2445,6 @@ var CodeblockRunningWorker = class {
     });
   }
 };
-
-// node_modules/ts-md5/dist/esm/md5.js
-var Md5 = class {
-  constructor() {
-    this._dataLength = 0;
-    this._bufferLength = 0;
-    this._state = new Int32Array(4);
-    this._buffer = new ArrayBuffer(68);
-    this._buffer8 = new Uint8Array(this._buffer, 0, 68);
-    this._buffer32 = new Uint32Array(this._buffer, 0, 17);
-    this.start();
-  }
-  static hashStr(str, raw = false) {
-    return this.onePassHasher.start().appendStr(str).end(raw);
-  }
-  static hashAsciiStr(str, raw = false) {
-    return this.onePassHasher.start().appendAsciiStr(str).end(raw);
-  }
-  static _hex(x) {
-    const hc = Md5.hexChars;
-    const ho = Md5.hexOut;
-    let n2;
-    let offset2;
-    let j;
-    let i;
-    for (i = 0; i < 4; i += 1) {
-      offset2 = i * 8;
-      n2 = x[i];
-      for (j = 0; j < 8; j += 2) {
-        ho[offset2 + 1 + j] = hc.charAt(n2 & 15);
-        n2 >>>= 4;
-        ho[offset2 + 0 + j] = hc.charAt(n2 & 15);
-        n2 >>>= 4;
-      }
-    }
-    return ho.join("");
-  }
-  static _md5cycle(x, k) {
-    let a = x[0];
-    let b = x[1];
-    let c = x[2];
-    let d = x[3];
-    a += (b & c | ~b & d) + k[0] - 680876936 | 0;
-    a = (a << 7 | a >>> 25) + b | 0;
-    d += (a & b | ~a & c) + k[1] - 389564586 | 0;
-    d = (d << 12 | d >>> 20) + a | 0;
-    c += (d & a | ~d & b) + k[2] + 606105819 | 0;
-    c = (c << 17 | c >>> 15) + d | 0;
-    b += (c & d | ~c & a) + k[3] - 1044525330 | 0;
-    b = (b << 22 | b >>> 10) + c | 0;
-    a += (b & c | ~b & d) + k[4] - 176418897 | 0;
-    a = (a << 7 | a >>> 25) + b | 0;
-    d += (a & b | ~a & c) + k[5] + 1200080426 | 0;
-    d = (d << 12 | d >>> 20) + a | 0;
-    c += (d & a | ~d & b) + k[6] - 1473231341 | 0;
-    c = (c << 17 | c >>> 15) + d | 0;
-    b += (c & d | ~c & a) + k[7] - 45705983 | 0;
-    b = (b << 22 | b >>> 10) + c | 0;
-    a += (b & c | ~b & d) + k[8] + 1770035416 | 0;
-    a = (a << 7 | a >>> 25) + b | 0;
-    d += (a & b | ~a & c) + k[9] - 1958414417 | 0;
-    d = (d << 12 | d >>> 20) + a | 0;
-    c += (d & a | ~d & b) + k[10] - 42063 | 0;
-    c = (c << 17 | c >>> 15) + d | 0;
-    b += (c & d | ~c & a) + k[11] - 1990404162 | 0;
-    b = (b << 22 | b >>> 10) + c | 0;
-    a += (b & c | ~b & d) + k[12] + 1804603682 | 0;
-    a = (a << 7 | a >>> 25) + b | 0;
-    d += (a & b | ~a & c) + k[13] - 40341101 | 0;
-    d = (d << 12 | d >>> 20) + a | 0;
-    c += (d & a | ~d & b) + k[14] - 1502002290 | 0;
-    c = (c << 17 | c >>> 15) + d | 0;
-    b += (c & d | ~c & a) + k[15] + 1236535329 | 0;
-    b = (b << 22 | b >>> 10) + c | 0;
-    a += (b & d | c & ~d) + k[1] - 165796510 | 0;
-    a = (a << 5 | a >>> 27) + b | 0;
-    d += (a & c | b & ~c) + k[6] - 1069501632 | 0;
-    d = (d << 9 | d >>> 23) + a | 0;
-    c += (d & b | a & ~b) + k[11] + 643717713 | 0;
-    c = (c << 14 | c >>> 18) + d | 0;
-    b += (c & a | d & ~a) + k[0] - 373897302 | 0;
-    b = (b << 20 | b >>> 12) + c | 0;
-    a += (b & d | c & ~d) + k[5] - 701558691 | 0;
-    a = (a << 5 | a >>> 27) + b | 0;
-    d += (a & c | b & ~c) + k[10] + 38016083 | 0;
-    d = (d << 9 | d >>> 23) + a | 0;
-    c += (d & b | a & ~b) + k[15] - 660478335 | 0;
-    c = (c << 14 | c >>> 18) + d | 0;
-    b += (c & a | d & ~a) + k[4] - 405537848 | 0;
-    b = (b << 20 | b >>> 12) + c | 0;
-    a += (b & d | c & ~d) + k[9] + 568446438 | 0;
-    a = (a << 5 | a >>> 27) + b | 0;
-    d += (a & c | b & ~c) + k[14] - 1019803690 | 0;
-    d = (d << 9 | d >>> 23) + a | 0;
-    c += (d & b | a & ~b) + k[3] - 187363961 | 0;
-    c = (c << 14 | c >>> 18) + d | 0;
-    b += (c & a | d & ~a) + k[8] + 1163531501 | 0;
-    b = (b << 20 | b >>> 12) + c | 0;
-    a += (b & d | c & ~d) + k[13] - 1444681467 | 0;
-    a = (a << 5 | a >>> 27) + b | 0;
-    d += (a & c | b & ~c) + k[2] - 51403784 | 0;
-    d = (d << 9 | d >>> 23) + a | 0;
-    c += (d & b | a & ~b) + k[7] + 1735328473 | 0;
-    c = (c << 14 | c >>> 18) + d | 0;
-    b += (c & a | d & ~a) + k[12] - 1926607734 | 0;
-    b = (b << 20 | b >>> 12) + c | 0;
-    a += (b ^ c ^ d) + k[5] - 378558 | 0;
-    a = (a << 4 | a >>> 28) + b | 0;
-    d += (a ^ b ^ c) + k[8] - 2022574463 | 0;
-    d = (d << 11 | d >>> 21) + a | 0;
-    c += (d ^ a ^ b) + k[11] + 1839030562 | 0;
-    c = (c << 16 | c >>> 16) + d | 0;
-    b += (c ^ d ^ a) + k[14] - 35309556 | 0;
-    b = (b << 23 | b >>> 9) + c | 0;
-    a += (b ^ c ^ d) + k[1] - 1530992060 | 0;
-    a = (a << 4 | a >>> 28) + b | 0;
-    d += (a ^ b ^ c) + k[4] + 1272893353 | 0;
-    d = (d << 11 | d >>> 21) + a | 0;
-    c += (d ^ a ^ b) + k[7] - 155497632 | 0;
-    c = (c << 16 | c >>> 16) + d | 0;
-    b += (c ^ d ^ a) + k[10] - 1094730640 | 0;
-    b = (b << 23 | b >>> 9) + c | 0;
-    a += (b ^ c ^ d) + k[13] + 681279174 | 0;
-    a = (a << 4 | a >>> 28) + b | 0;
-    d += (a ^ b ^ c) + k[0] - 358537222 | 0;
-    d = (d << 11 | d >>> 21) + a | 0;
-    c += (d ^ a ^ b) + k[3] - 722521979 | 0;
-    c = (c << 16 | c >>> 16) + d | 0;
-    b += (c ^ d ^ a) + k[6] + 76029189 | 0;
-    b = (b << 23 | b >>> 9) + c | 0;
-    a += (b ^ c ^ d) + k[9] - 640364487 | 0;
-    a = (a << 4 | a >>> 28) + b | 0;
-    d += (a ^ b ^ c) + k[12] - 421815835 | 0;
-    d = (d << 11 | d >>> 21) + a | 0;
-    c += (d ^ a ^ b) + k[15] + 530742520 | 0;
-    c = (c << 16 | c >>> 16) + d | 0;
-    b += (c ^ d ^ a) + k[2] - 995338651 | 0;
-    b = (b << 23 | b >>> 9) + c | 0;
-    a += (c ^ (b | ~d)) + k[0] - 198630844 | 0;
-    a = (a << 6 | a >>> 26) + b | 0;
-    d += (b ^ (a | ~c)) + k[7] + 1126891415 | 0;
-    d = (d << 10 | d >>> 22) + a | 0;
-    c += (a ^ (d | ~b)) + k[14] - 1416354905 | 0;
-    c = (c << 15 | c >>> 17) + d | 0;
-    b += (d ^ (c | ~a)) + k[5] - 57434055 | 0;
-    b = (b << 21 | b >>> 11) + c | 0;
-    a += (c ^ (b | ~d)) + k[12] + 1700485571 | 0;
-    a = (a << 6 | a >>> 26) + b | 0;
-    d += (b ^ (a | ~c)) + k[3] - 1894986606 | 0;
-    d = (d << 10 | d >>> 22) + a | 0;
-    c += (a ^ (d | ~b)) + k[10] - 1051523 | 0;
-    c = (c << 15 | c >>> 17) + d | 0;
-    b += (d ^ (c | ~a)) + k[1] - 2054922799 | 0;
-    b = (b << 21 | b >>> 11) + c | 0;
-    a += (c ^ (b | ~d)) + k[8] + 1873313359 | 0;
-    a = (a << 6 | a >>> 26) + b | 0;
-    d += (b ^ (a | ~c)) + k[15] - 30611744 | 0;
-    d = (d << 10 | d >>> 22) + a | 0;
-    c += (a ^ (d | ~b)) + k[6] - 1560198380 | 0;
-    c = (c << 15 | c >>> 17) + d | 0;
-    b += (d ^ (c | ~a)) + k[13] + 1309151649 | 0;
-    b = (b << 21 | b >>> 11) + c | 0;
-    a += (c ^ (b | ~d)) + k[4] - 145523070 | 0;
-    a = (a << 6 | a >>> 26) + b | 0;
-    d += (b ^ (a | ~c)) + k[11] - 1120210379 | 0;
-    d = (d << 10 | d >>> 22) + a | 0;
-    c += (a ^ (d | ~b)) + k[2] + 718787259 | 0;
-    c = (c << 15 | c >>> 17) + d | 0;
-    b += (d ^ (c | ~a)) + k[9] - 343485551 | 0;
-    b = (b << 21 | b >>> 11) + c | 0;
-    x[0] = a + x[0] | 0;
-    x[1] = b + x[1] | 0;
-    x[2] = c + x[2] | 0;
-    x[3] = d + x[3] | 0;
-  }
-  start() {
-    this._dataLength = 0;
-    this._bufferLength = 0;
-    this._state.set(Md5.stateIdentity);
-    return this;
-  }
-  appendStr(str) {
-    const buf8 = this._buffer8;
-    const buf32 = this._buffer32;
-    let bufLen = this._bufferLength;
-    let code;
-    let i;
-    for (i = 0; i < str.length; i += 1) {
-      code = str.charCodeAt(i);
-      if (code < 128) {
-        buf8[bufLen++] = code;
-      } else if (code < 2048) {
-        buf8[bufLen++] = (code >>> 6) + 192;
-        buf8[bufLen++] = code & 63 | 128;
-      } else if (code < 55296 || code > 56319) {
-        buf8[bufLen++] = (code >>> 12) + 224;
-        buf8[bufLen++] = code >>> 6 & 63 | 128;
-        buf8[bufLen++] = code & 63 | 128;
-      } else {
-        code = (code - 55296) * 1024 + (str.charCodeAt(++i) - 56320) + 65536;
-        if (code > 1114111) {
-          throw new Error("Unicode standard supports code points up to U+10FFFF");
-        }
-        buf8[bufLen++] = (code >>> 18) + 240;
-        buf8[bufLen++] = code >>> 12 & 63 | 128;
-        buf8[bufLen++] = code >>> 6 & 63 | 128;
-        buf8[bufLen++] = code & 63 | 128;
-      }
-      if (bufLen >= 64) {
-        this._dataLength += 64;
-        Md5._md5cycle(this._state, buf32);
-        bufLen -= 64;
-        buf32[0] = buf32[16];
-      }
-    }
-    this._bufferLength = bufLen;
-    return this;
-  }
-  appendAsciiStr(str) {
-    const buf8 = this._buffer8;
-    const buf32 = this._buffer32;
-    let bufLen = this._bufferLength;
-    let i;
-    let j = 0;
-    for (; ; ) {
-      i = Math.min(str.length - j, 64 - bufLen);
-      while (i--) {
-        buf8[bufLen++] = str.charCodeAt(j++);
-      }
-      if (bufLen < 64) {
-        break;
-      }
-      this._dataLength += 64;
-      Md5._md5cycle(this._state, buf32);
-      bufLen = 0;
-    }
-    this._bufferLength = bufLen;
-    return this;
-  }
-  appendByteArray(input) {
-    const buf8 = this._buffer8;
-    const buf32 = this._buffer32;
-    let bufLen = this._bufferLength;
-    let i;
-    let j = 0;
-    for (; ; ) {
-      i = Math.min(input.length - j, 64 - bufLen);
-      while (i--) {
-        buf8[bufLen++] = input[j++];
-      }
-      if (bufLen < 64) {
-        break;
-      }
-      this._dataLength += 64;
-      Md5._md5cycle(this._state, buf32);
-      bufLen = 0;
-    }
-    this._bufferLength = bufLen;
-    return this;
-  }
-  getState() {
-    const s2 = this._state;
-    return {
-      buffer: String.fromCharCode.apply(null, Array.from(this._buffer8)),
-      buflen: this._bufferLength,
-      length: this._dataLength,
-      state: [s2[0], s2[1], s2[2], s2[3]]
-    };
-  }
-  setState(state) {
-    const buf = state.buffer;
-    const x = state.state;
-    const s2 = this._state;
-    let i;
-    this._dataLength = state.length;
-    this._bufferLength = state.buflen;
-    s2[0] = x[0];
-    s2[1] = x[1];
-    s2[2] = x[2];
-    s2[3] = x[3];
-    for (i = 0; i < buf.length; i += 1) {
-      this._buffer8[i] = buf.charCodeAt(i);
-    }
-  }
-  end(raw = false) {
-    const bufLen = this._bufferLength;
-    const buf8 = this._buffer8;
-    const buf32 = this._buffer32;
-    const i = (bufLen >> 2) + 1;
-    this._dataLength += bufLen;
-    const dataBitsLen = this._dataLength * 8;
-    buf8[bufLen] = 128;
-    buf8[bufLen + 1] = buf8[bufLen + 2] = buf8[bufLen + 3] = 0;
-    buf32.set(Md5.buffer32Identity.subarray(i), i);
-    if (bufLen > 55) {
-      Md5._md5cycle(this._state, buf32);
-      buf32.set(Md5.buffer32Identity);
-    }
-    if (dataBitsLen <= 4294967295) {
-      buf32[14] = dataBitsLen;
-    } else {
-      const matches = dataBitsLen.toString(16).match(/(.*?)(.{0,8})$/);
-      if (matches === null) {
-        return;
-      }
-      const lo = parseInt(matches[2], 16);
-      const hi = parseInt(matches[1], 16) || 0;
-      buf32[14] = lo;
-      buf32[15] = hi;
-    }
-    Md5._md5cycle(this._state, buf32);
-    return raw ? this._state : Md5._hex(this._state);
-  }
-};
-Md5.stateIdentity = new Int32Array([1732584193, -271733879, -1732584194, 271733878]);
-Md5.buffer32Identity = new Int32Array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-Md5.hexChars = "0123456789abcdef";
-Md5.hexOut = [];
-Md5.onePassHasher = new Md5();
-if (Md5.hashStr("hello") !== "5d41402abc4b2a76b9719d911017c592") {
-  throw new Error("Md5 self test failed.");
-}
 
 // src/services/codeblockService/CodeblockService.ts
 var CodeblockService = class extends AbstractService {
@@ -3612,22 +3670,19 @@ var AbstractModel = class {
   }
   touch(force) {
     if (force) {
-      if (this.version === void 0)
-        this.version = 0;
-      this.version++;
+      this.version = Date.now();
       return true;
     }
     const md5 = new Md5();
     md5.appendStr(JSON.stringify(this.metadata));
     const metadataMd5 = md5.end();
     const relationshipsMd5 = this._relationships.md5();
-    if (this._previousMetadata !== metadataMd5 || this._previousRelationships !== relationshipsMd5) {
+    if (this._previousMetadata !== metadataMd5 || this._previousRelationships !== relationshipsMd5 || this._previousIndex !== this.index.checksum) {
       this._previousMetadata = metadataMd5;
       this._previousRelationships = relationshipsMd5;
       this._previousRelationshipsStringified = structuredClone(this._relationships.stringified);
-      if (this.version === void 0)
-        this.version = 0;
-      this.version++;
+      this._previousIndex = this.index.checksum;
+      this.version = Date.now();
       return true;
     }
     return false;
@@ -5678,7 +5733,7 @@ var GalleryAddRemoteModalView = class extends AbstractConfirmationGalleryModalVi
     this._addButtonEl.addEventListener("click", () => {
       const imageEl = new Image();
       for (let index = 0; index < this.model.images.length; index++) {
-        if (this._urlEl.value.toLowerCase() === this.model.images[index].src.toLowerCase()) {
+        if (this._urlEl.value === this.model.images[index].src) {
           this._errorEl.style.display = "";
           this._errorEl.textContent = "The URL to the image is invalid.";
           return;
@@ -5690,7 +5745,7 @@ var GalleryAddRemoteModalView = class extends AbstractConfirmationGalleryModalVi
         return;
       };
       imageEl.onload = (evt) => {
-        this.api.service(CodeblockService).addOrUpdateImage(this._urlEl.value.toLowerCase(), "").then((image) => {
+        this.api.service(CodeblockService).addOrUpdateImage(this._urlEl.value, "").then((image) => {
           if (image !== void 0) {
             this.selectedImage = image;
             this.confirmationOverlayEl.style.display = "block";
@@ -12528,12 +12583,11 @@ var AbtStageElement = class extends AbstractElement {
 
 // src/managers/viewsManager/elements/ParentSwitcherSelectorElement.ts
 var import_obsidian31 = require("obsidian");
-var import_crypto2 = require("crypto");
 var ParentSwitcherSelectorElement = class extends AbstractElement {
   constructor(api) {
     super(api);
     this.api = api;
-    this._id = (0, import_crypto2.randomUUID)();
+    this._id = v4_default();
   }
   render(data, containerEl) {
     let selectedModel = void 0;
@@ -13310,7 +13364,7 @@ var AbstractRelationshipView = class {
     this._cellClass.set(1 /* Image */, ["image"]);
   }
   render() {
-    if (this.model instanceof CampaignModel && this.relatedComponentType !== 2 /* Adventure */)
+    if (this.model instanceof CampaignModel && this.relatedComponentType !== 2 /* Adventure */ && this.relatedComponentType !== 16 /* Session */)
       this.canBeOrdered = false;
     if (this.relationshipType === void 0)
       this.relationshipType = 1 /* Reversed */ | 2 /* Bidirectional */ | 4 /* Unidirectional */;
@@ -16574,7 +16628,6 @@ var FantasyCalendarDatePicker = class {
 };
 
 // src/services/fantasyCalendarService/views/elements/FantasyCalendarElement.ts
-var import_crypto3 = require("crypto");
 var FantasyCalendarElement = class extends AbstractElement {
   render(data, containerEl) {
     var _a;
@@ -16588,7 +16641,7 @@ var FantasyCalendarElement = class extends AbstractElement {
     let dateValue = "";
     if (data.values !== void 0 && data.values.date !== void 0 && data.model.campaign.fantasyCalendar !== void 0)
       dateValue = this.api.service(FantasyCalendarService).getDay(data.values.date, data.model.campaign.fantasyCalendar).displayDate;
-    const id = (0, import_crypto3.randomUUID)();
+    const id = v4_default();
     this._inputEl = contentEl.createEl("input", { cls: "rpg-manager-fantasy-calendar-picker-launcher " + id });
     this._inputEl.type = "text";
     this._inputEl.value = dateValue;
@@ -17018,6 +17071,38 @@ var ShortTextElement = class extends AbstractTextElement {
   }
 };
 
+// src/components/character/views/elements/PronounElement.ts
+var PronounElement = class extends AbstractTextElement {
+  render(data, containerEl) {
+    const infoEl = containerEl.createDiv({ cls: "rpg-manager-header-container-info-data-container rpg-manager-header-container-info-data-container-short clearfix" });
+    this.createTitle(data.model, data.title, infoEl);
+    const contentEl = infoEl.createDiv({ cls: "rpg-manager-header-container-info-data-container-content clearfix" });
+    const pronounSelectorEl = contentEl.createEl("select");
+    pronounSelectorEl.createEl("option", {
+      text: "",
+      value: ""
+    }).selected = true;
+    Object.keys(Pronoun).filter((v) => isNaN(Number(v))).forEach((type, index) => {
+      const pronoun = this.api.service(PronounService).createPronoun(type);
+      const optionEl = pronounSelectorEl.createEl("option", {
+        text: this.api.service(PronounService).readPronoun(pronoun),
+        value: type
+      });
+      if (data.model.pronoun !== void 0 && pronoun === data.model.pronoun) {
+        optionEl.selected = true;
+      }
+    });
+    pronounSelectorEl.addEventListener("change", () => {
+      if (data.editableKey === void 0)
+        return;
+      if (pronounSelectorEl.value !== "")
+        this.api.service(CodeblockService).addOrUpdate(data.editableKey, pronounSelectorEl.value);
+      else
+        this.api.service(CodeblockService).addOrUpdate(data.editableKey, void 0);
+    });
+  }
+};
+
 // src/components/character/views/CharacterHeaderView.ts
 var CharacterHeaderView = class extends AbstractHeaderView {
   render() {
@@ -17026,11 +17111,34 @@ var CharacterHeaderView = class extends AbstractHeaderView {
     this.addTitle();
     this.addComponentOptions();
     this.addGallery();
-    this.addInfoElement(LongTextElement, { model: this.model, title: "Description", values: (_a = this.model.synopsis) != null ? _a : '<span class="missing">Synopsis Missing</span>', editableKey: "data.synopsis" });
+    this.addInfoElement(LongTextElement, {
+      model: this.model,
+      title: "Description",
+      values: (_a = this.model.synopsis) != null ? _a : '<span class="missing">Synopsis Missing</span>',
+      editableKey: "data.synopsis"
+    });
+    this.addInfoElement(PronounElement, {
+      model: this.model,
+      title: "Pronoun",
+      values: this.model.pronoun,
+      editableKey: "data.pronoun"
+    });
     if (this.model.age !== void 0)
       this.addInfoElement(ShortTextElement, { model: this.model, title: "Age", values: this.model.age.toString() });
-    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, { model: this.model, title: "Date of Birth", values: this.model.dob, category: "RPG Manager Birth" /* Birth */, editableKey: "data.dob" });
-    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, { model: this.model, title: "Date of Death", values: this.model.death, category: "RPG Manager Death" /* Death */, editableKey: "data.death" });
+    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, {
+      model: this.model,
+      title: "Date of Birth",
+      values: this.model.dob,
+      category: "RPG Manager Birth" /* Birth */,
+      editableKey: "data.dob"
+    });
+    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, {
+      model: this.model,
+      title: "Date of Death",
+      values: this.model.death,
+      category: "RPG Manager Death" /* Death */,
+      editableKey: "data.death"
+    });
     if (this.model.death != null) {
       let death = this.api.service(DateService).getReadableDate(this.model.death, this.model);
       if (this.model.age !== void 0)
@@ -17226,12 +17334,40 @@ var NonPlayerCharacterHeaderView = class extends AbstractHeaderView {
     this.addTitle();
     this.addComponentOptions();
     this.addGallery();
-    this.addInfoElement(LongTextElement, { model: this.model, title: "Description", values: (_a = this.model.synopsis) != null ? _a : '<span class="missing">Synopsis Missing</span>', editableKey: "data.synopsis" });
-    this.addInfoElement(LongTextElement, { model: this.model, title: "Goals", values: (_b = this.model.goals) != null ? _b : '<span class="missing">Goals Missing</span>', editableKey: "data.goals" });
+    this.addInfoElement(LongTextElement, {
+      model: this.model,
+      title: "Description",
+      values: (_a = this.model.synopsis) != null ? _a : '<span class="missing">Synopsis Missing</span>',
+      editableKey: "data.synopsis"
+    });
+    this.addInfoElement(LongTextElement, {
+      model: this.model,
+      title: "Goals",
+      values: (_b = this.model.goals) != null ? _b : '<span class="missing">Goals Missing</span>',
+      editableKey: "data.goals"
+    });
+    this.addInfoElement(PronounElement, {
+      model: this.model,
+      title: "Pronoun",
+      values: this.model.pronoun,
+      editableKey: "data.pronoun"
+    });
     if (this.model.age !== void 0)
       this.addInfoElement(ShortTextElement, { model: this.model, title: "Age", values: this.model.age.toString() });
-    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, { model: this.model, title: "Date of Birth", values: this.model.dob, category: "RPG Manager Birth" /* Birth */, editableKey: "data.dob" });
-    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, { model: this.model, title: "Date of Death", values: this.model.death, category: "RPG Manager Death" /* Death */, editableKey: "data.death" });
+    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, {
+      model: this.model,
+      title: "Date of Birth",
+      values: this.model.dob,
+      category: "RPG Manager Birth" /* Birth */,
+      editableKey: "data.dob"
+    });
+    this.addInfoElement(this.model.campaign.calendar === 0 /* Gregorian */ ? DateElement : FantasyCalendarElement, {
+      model: this.model,
+      title: "Date of Death",
+      values: this.model.death,
+      category: "RPG Manager Death" /* Death */,
+      editableKey: "data.death"
+    });
     if (this.model.death != null) {
       let death = this.api.service(DateService).getReadableDate(this.model.death, this.model);
       if (this.model.age !== void 0)
@@ -18551,6 +18687,10 @@ var SessionTemplate = class extends AbstractComponentTemplate {
 
 // src/components/session/views/SessionRelationshipView.ts
 var SessionRelationshipView = class extends AbstractRelationshipView {
+  constructor() {
+    super(...arguments);
+    this.canBeOrdered = true;
+  }
   getFieldValue(field, model) {
     if (field === 6 /* Date */)
       return this.api.service(DateService).getReadableDate(model.irl, model);
@@ -18869,10 +19009,13 @@ var GraphViewService = class extends AbstractService {
       const content = domain.originalFileContent.split("\n");
       const newRelationships = [];
       const relationshipsToRemove = [];
+      const additionalContent = [];
       if (domain.codeblockEnd.line + 1 < content.length) {
         for (let index = domain.codeblockEnd.line + 1; index < content.length; index++) {
-          if (content[index] !== "")
+          if (content[index].startsWith("[[") && content[index].endsWith("|]]"))
             relationshipsToRemove.push(content[index].substring(2, content[index].length - 3).toLowerCase());
+          else
+            additionalContent.push(content[index]);
         }
       }
       const existingRelationshipCount = relationshipsToRemove.length;
@@ -18899,6 +19042,8 @@ var GraphViewService = class extends AbstractService {
             break;
         }
         newFileContent += newHiddenLinkContent;
+        if (additionalContent.length > 0)
+          newFileContent += "\n" + additionalContent.join("\n");
         if (newFileContent !== domain.originalFileContent)
           this.api.app.vault.modify(file, newFileContent);
       }
@@ -19158,6 +19303,9 @@ var Database = class extends import_obsidian37.Component {
           component = yield DatabaseInitialiser.createComponent(this._api, file);
         if (component === void 0)
           return;
+        const newId = yield DatabaseInitialiser.readID(file);
+        if (newId !== void 0 && (component == null ? void 0 : component.index.checksum) !== newId.checksum)
+          component.index = newId;
         yield component.readMetadata();
         if (!isNewComponent)
           yield component.addReverseRelationships();
@@ -19396,7 +19544,6 @@ var V3_0_to_3_1_worker = class extends AbstractDatabaseWorker {
 
 // src/core/updater/workers/V3_1_to_3_4_worker.ts
 var import_obsidian39 = require("obsidian");
-var import_crypto4 = require("crypto");
 var V3_1_to_3_4_worker = class extends AbstractDatabaseWorker {
   get from() {
     return "3.1";
@@ -19437,7 +19584,7 @@ var V3_1_to_3_4_worker = class extends AbstractDatabaseWorker {
     return __async(this, null, function* () {
       const campaigns = this._elements.filter((component) => component.type === 1 /* Campaign */);
       for (let index = 0; index < campaigns.length; index++) {
-        const id = (0, import_crypto4.randomUUID)();
+        const id = v4_default();
         const newComponentId = {
           type: campaigns[index].type,
           campaignSettings: campaigns[index].campaignSettings,
@@ -19522,7 +19669,7 @@ var V3_1_to_3_4_worker = class extends AbstractDatabaseWorker {
         const newComponentId = {
           type: adventures[index].type,
           campaignSettings: adventures[index].campaignSettings,
-          id: (0, import_crypto4.randomUUID)(),
+          id: v4_default(),
           campaignId: campaign.newIndex.campaignId,
           parentId: campaign.newIndex.campaignId,
           positionInParent: index + 1
@@ -19551,7 +19698,7 @@ var V3_1_to_3_4_worker = class extends AbstractDatabaseWorker {
         const newComponentId = {
           type: acts[index].type,
           campaignSettings: acts[index].campaignSettings,
-          id: (0, import_crypto4.randomUUID)(),
+          id: v4_default(),
           campaignId: adventure.newIndex.campaignId,
           parentId: adventure.newIndex.id,
           positionInParent: index + 1
@@ -19588,7 +19735,7 @@ var V3_1_to_3_4_worker = class extends AbstractDatabaseWorker {
         const newComponentId = {
           type: scenes[index].type,
           campaignSettings: scenes[index].campaignSettings,
-          id: (0, import_crypto4.randomUUID)(),
+          id: v4_default(),
           campaignId: act.newIndex.campaignId,
           parentId: act.newIndex.id,
           positionInParent: index + 1
@@ -19616,7 +19763,7 @@ var V3_1_to_3_4_worker = class extends AbstractDatabaseWorker {
         const newComponentId = {
           type: sessions[index].type,
           campaignSettings: sessions[index].campaignSettings,
-          id: (0, import_crypto4.randomUUID)(),
+          id: v4_default(),
           campaignId: campaign.newIndex.campaignId,
           parentId: campaign.newIndex.campaignId,
           positionInParent: index + 1
@@ -19634,7 +19781,7 @@ var V3_1_to_3_4_worker = class extends AbstractDatabaseWorker {
         const newComponentId = {
           type: elements[index].type,
           campaignSettings: elements[index].campaignSettings,
-          id: (0, import_crypto4.randomUUID)(),
+          id: v4_default(),
           campaignId: campaign.newIndex.campaignId,
           parentId: campaign.newIndex.campaignId,
           positionInParent: 1
