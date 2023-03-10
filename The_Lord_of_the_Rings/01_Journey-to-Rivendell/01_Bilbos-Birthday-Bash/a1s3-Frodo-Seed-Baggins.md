@@ -6,7 +6,7 @@ tags: []
 data: 
   synopsis: "Seed has disappeared, and in his place is Frodo. Frodo Seed Baggins, to be precise. Tree, Herb, and Cactus try to work out if Frodo is really Seed as Gandalf announces their arrival in Bag's End. "
   complete: false
-  sessionId: 1
+  sessionId: "d33bcd2b-5647-47a7-a1e1-d24e7b41edd9"
   action: "It would be a wise idea if the player characters could figure out what happened to Seed. "
   trigger: "Seed crosses paths with Frodo Baggins."
   date: "3018-10-20"
@@ -15,6 +15,17 @@ data:
   duration: 0
   durations: []
   storyCircleStage: 
+  positionInSession: 3
+relationships: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/Characters/Frodo-Baggins.md"
+    description: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/Characters/Samwise-Gamgee.md"
+    description: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/NonPlayerCharacters/Wizards/Gandalf.md"
+    description: 
 ```
 
 ```RpgManager
@@ -58,3 +69,7 @@ campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
 parentId: 86b39544-654f-411d-8331-42c566307bf9
 positionInParent: 3
 ```
+[[Frodo-Baggins|]]
+[[Samwise-Gamgee|]]
+[[Bilbo-Baggins|]]
+[[Gandalf|]]

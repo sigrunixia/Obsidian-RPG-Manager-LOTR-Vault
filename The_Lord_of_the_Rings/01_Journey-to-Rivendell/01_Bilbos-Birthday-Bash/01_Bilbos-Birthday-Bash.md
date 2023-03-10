@@ -23,6 +23,10 @@ data:
   synopsis: "It is not everyday that a Hobbit turns 111, and Bilbo is poised to make this a night that the folks of the Shire will never forget. Meanwhile, the wizard Gandalf brings not only Fireworks to this iteration of the Lord of the Rings, but the Floratsons. Seed, Tree, Herb, and Cactus Floratson, to be exact."
   complete: false
   abtStage: 
+relationships: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/NonPlayerCharacters/Wizards/Saruman.md"
+    description: 
 ```
 
 ```RpgManager
@@ -64,3 +68,5 @@ campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
 parentId: 07acdf84-125a-44fe-b02f-35ebfc763d63
 positionInParent: 1
 ```
+[[Saruman|]]
+[[Bilbo-Baggins|]]

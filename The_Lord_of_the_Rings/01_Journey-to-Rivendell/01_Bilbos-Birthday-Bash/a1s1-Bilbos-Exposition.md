@@ -6,7 +6,7 @@ tags: []
 data: 
   synopsis: "Character Creation"
   complete: false
-  sessionId: 0
+  sessionId: "d33bcd2b-5647-47a7-a1e1-d24e7b41edd9"
   action: "Explain the setting of the Lord of the Rings Universe, what ruleset you will use, and then create characters."
   trigger: "Start the Game and begin Character Creation"
   date: 
@@ -15,6 +15,14 @@ data:
   duration: 0
   durations: []
   storyCircleStage: 
+  positionInSession: 1
+relationships: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/NonPlayerCharacters/Halflings/Bilbo-Baggins.md"
+    description: 
+  - type: "bidirectional"
+    path: "The_Lord_of_the_Rings/Locations/Bag-End.md"
+    description: 
 ```
 ```RpgManager
 models: 
@@ -52,3 +60,5 @@ campaignId: 75e039c0-aecb-4a0e-a45a-800ca81c0e13
 parentId: 86b39544-654f-411d-8331-42c566307bf9
 positionInParent: 1
 ```
+[[Bilbo-Baggins|]]
+[[Bag-End|]]

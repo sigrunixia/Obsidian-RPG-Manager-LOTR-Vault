@@ -328,6 +328,32 @@
             "month": 12,
             "year": 2968
           }
+        },
+        {
+          "auto": false,
+          "id": "ID_RPGM_1676146172403",
+          "name": "a1s1-Bilbos-Exposition",
+          "note": "The_Lord_of_the_Rings/Scenes/a1s1-Bilbos-Exposition",
+          "category": "rpgm-rpg manager scene",
+          "description": "",
+          "date": {
+            "day": 20,
+            "month": 9,
+            "year": 3018
+          }
+        },
+        {
+          "auto": false,
+          "id": "ID_RPGM_1676146538609",
+          "name": "a1s2-The Road Goes Ever On and On",
+          "note": "The_Lord_of_the_Rings/Scenes/a1s2-The Road Goes Ever On and On",
+          "category": "rpgm-rpg manager scene",
+          "description": "",
+          "date": {
+            "day": 1,
+            "month": 9,
+            "year": 3018
+          }
         }
       ],
       "id": "ID_4ad9f82989b9",
@@ -336,6 +362,11 @@
           "name": "RPG Manager Birth",
           "id": "rpgm-rpg manager birth",
           "color": "#00CC00"
+        },
+        {
+          "name": "RPG Manager Scene",
+          "id": "rpgm-rpg manager scene",
+          "color": "#606060"
         }
       ],
       "timelineTag": "#timeline"
